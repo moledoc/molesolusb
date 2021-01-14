@@ -87,14 +87,14 @@ nvim +PlugInstall +qa
 echo "Add gruvbox colorscheme to vim colors"
 sudo cp $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
 
-# Setup bazecor, the DygmaRaise keyboard tool.
-echo "Install Bazecor for Dygma keyboard"
-mkdir $HOME/.AppImages
-echo "Directory $HOME/.AppImages made"
-wget --output-file=$HOME/.AppImages/Bazecor.AppImage https://github.com/Dygmalab/Bazecor/releases/download/bazecor-0.2.6/Bazecor-0.2.6.AppImage
-chmod +x $HOME/.AppImages/Bazecor.AppImage
-rm Bazecor-0.2.6.AppImage
-echo "Bazecor installed"
+## Setup bazecor, the DygmaRaise keyboard tool.
+#echo "Install Bazecor for Dygma keyboard"
+#mkdir $HOME/.AppImages
+#echo "Directory $HOME/.AppImages made"
+#wget --output-file=$HOME/.AppImages/Bazecor.AppImage https://github.com/Dygmalab/Bazecor/releases/download/bazecor-0.2.6/Bazecor-0.2.6.AppImage
+#chmod +x $HOME/.AppImages/Bazecor.AppImage
+#rm Bazecor-0.2.6.AppImage
+#echo "Bazecor installed"
 
 # pull additional repos, if ssh key is set.
 echo "Is ssh key added to github? (if added, type 'yes'; if not, but this is wanted, then do it now and then type 'yes')" 

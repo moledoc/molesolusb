@@ -2,7 +2,7 @@
 
 # README: Use fzf to go-to selected directory.
 
-cd $(fdfind --type d --hidden --ignore-case \
+cd $(fd --type d --hidden --ignore-case \
   --exclude '.mozilla' \
   -E '.cache' \
   -E '.local' \
