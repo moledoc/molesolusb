@@ -135,13 +135,13 @@ Ground rules:
 * To import keyboard shortcuts, make sure dconf-cli package is installed.
 
 ```sh
-dconf dump /org/cinnamon/desktop/keybindings/ > dconf-settings.conf # export
-dconf dump /org/cinnamon/desktop/keybindings/ < dconf-settings.conf # import
+dconf dump /org/cinnamon/desktop/keybindings/ > $HOME/.config/cinnamonDE/dconf-settings.conf # export
+dconf dump /org/cinnamon/desktop/keybindings/ < $HOME/.config/cinnamonDE/dconf-settings.conf # import
 ```
 
 ### Budgie DE
 
-* TODO
+* TODO: similar to cinnamonDE
 
 ### RStudio
 
