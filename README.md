@@ -114,7 +114,7 @@ Also presents a list of most commonly used programs, fonts etc.
 * program: IDE/Editor for development (corresponding to the language, eg RStudio,VSCode,Intellij etc)
 * program: tmux (multiplexer) -- need to learn to use
 
-* font: fonts-hermit (might have different package name)
+* RE-EVALUATING THIS -- might stick with default fonts (unless they have some deficiency -- font: fonts-hermit (might have different package name)
 * colorscheme: gruvbox colorscheme
 * options: swap caps and esc (not needed if programmable keyboard), setxkbmap -option caps:swapescape 
 * options: have keybindings for different language, eg setxkbmap -layout us
