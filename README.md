@@ -73,9 +73,9 @@ sh .setup.sh
 * check with package manager is used and make symbolic link to correct aliases file. For example
 
 ```sh
-ln -s $HOME/.config/zsh/.aptAliases    $HOME/.config/zsh/.zPmAliases # Debian based
-ln -s $HOME/.config/zsh/.pacmanAliases $HOME/.config/zsh/.zPmAliases # Arch based
-ln -s $HOME/.config/zsh/.EoAliases     $HOME/.config/zsh/.zPmAliases # Solus
+ln -s $HOME/.config/zsh/.z_apt_aliases    $HOME/.config/zsh/.z_pm_aliases # Debian based
+ln -s $HOME/.config/zsh/.z_pacman_aliases $HOME/.config/zsh/.z_pm_aliases # Arch based
+ln -s $HOME/.config/zsh/.z_eopkg_aliases     $HOME/.config/zsh/.z_pm_aliases # Solus
 ```
 
 * The general setup should be done. Some tweaking might be necessary, but it is not covered in this readme.

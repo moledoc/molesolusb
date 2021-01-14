@@ -70,6 +70,7 @@ cp .* $HOME
 echo "Repository contents copied to $HOME"
 
 # add symlink to package manager aliases
+rm -f $HOME/.config/$new_shell/.z_pm_aliases
 ln -s $HOME/.config/$new_shell/.z_${pkg_manager}_aliases $HOME/.config/$new_shell/.z_pm_aliases
 echo "Symlink to package manager aliases created"
 

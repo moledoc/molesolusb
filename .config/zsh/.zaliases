@@ -165,7 +165,7 @@ alias weather="curl wttr.in"
 #	Scripts
 
 # update git repository directory
-alias updateRepo='updateRepo.zsh'
+alias update_repo='update_repo.zsh'
 
 ## open directoryu/go-to dir w/ fzf
 alias od='source opend.zsh'
