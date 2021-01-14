@@ -141,6 +141,10 @@ dconf dump /org/cinnamon/desktop/keybindings/ < $HOME/.config/cinnamonDE/dconf-s
 
 ### Budgie DE
 
+* TODO: similar to cinnamonDE + DESKTOP THEME
+
+### gnome-terminal
+
 * TODO: similar to cinnamonDE
 
 ### RStudio
