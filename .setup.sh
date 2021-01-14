@@ -64,9 +64,9 @@ xclip -selection clipboard < $HOME/.ssh/github_key.pub
 
 echo "IGNORE THESE cp ERRORS"
 # Copy contents of the repository to the right places.
-cp -r .scripts .config $HOME > /dev/null
+cp -r .scripts .config $HOME
 # cp .setup.sh .x* .X* .z* $HOME
-cp .* $HOME
+cp .* . $HOME
 echo "Repository contents copied to $HOME"
 
 # add symlink to package manager aliases
