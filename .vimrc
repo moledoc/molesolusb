@@ -176,7 +176,7 @@ autocmd Filetype rmd map <M-3> :!firefox<Space>%:r.html<Space>&<CR><CR>
 " Python
 
 " Set <M-t> to open terminal
-autocmd FileType python map <M-t> :! $TERM -e screen python &<CR>
+autocmd FileType python map <M-t> :! $TERMINAL -e screen python &<CR>
 
 " Set <M-5> to run the python code.
 autocmd FileType python map <M-5> :!python<Space>%<CR>
@@ -193,7 +193,7 @@ autocmd Filetype python vmap <Leader><Space> "xy:echo system("screen -S $(ls -R 
 
 " autocmd Filetype haskell map <M-t> :split term://stack ghci % <CR>
 " Open interactive haskell terminal
-autocmd Filetype haskell map  <M-t> :!<Space>$TERM<Space>-e<Space>stack<Space>ghci<Space>%<Space>&<CR>
+autocmd Filetype haskell map  <M-t> :!<Space>$TERMINAL<Space>-e<Space>stack<Space>ghci<Space>%<Space>&<CR>
 
 " Compile haskell code, so it can be imported to other hs file 
 " (needs to be in the same directory)

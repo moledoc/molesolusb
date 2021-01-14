@@ -58,12 +58,13 @@ mkdir $HOME/.ssh
 ssh-keygen -t rsa -b 4096 -C "$varEmail" -f $HOME/.ssh/github_key -P ""
 # change git remote from https to ssh
 echo "Change git remote from https to ssh"
-git remote set-url origin git@github.com:moledoc/molesolusb.git  
+git remote set-url origin git@github.com:moledoc/molecurrent.git  
 echo "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
 
+echo "IGNORE THESE cp ERRORS"
 # Copy contents of the repository to the right places.
-cp -r .scripts .config $HOME
+cp -r .scripts .config $HOME > /dev/null
 # cp .setup.sh .x* .X* .z* $HOME
 cp .* $HOME
 echo "Repository contents copied to $HOME"
@@ -83,7 +84,7 @@ nvim +PlugInstall +qa
 
 # add gruvbox for vim as well
 echo "Add gruvbox colorscheme to vim colors"
-sudo cp $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim81/colors
+sudo cp $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
 
 # Setup bazecor, the DygmaRaise keyboard tool.
 echo "Install Bazecor for Dygma keyboard"
@@ -91,6 +92,8 @@ mkdir $HOME/.AppImages
 echo "Directory $HOME/.AppImages made"
 wget --output-file=$HOME/.AppImages/Bazecor.AppImage https://github.com/Dygmalab/Bazecor/releases/download/bazecor-0.2.6/Bazecor-0.2.6.AppImage
 chmod +x $HOME/.AppImages/Bazecor.AppImage
+rm Bazecor-0.2.6.AppImage
+echo "Bazecor installed"
 
 # pull additional repos, if ssh key is set.
 echo "Is ssh key added to github? (if added, type 'yes'; if not, but this is wanted, then do it now and then type 'yes')" 
@@ -99,6 +102,7 @@ if [ "$hasSSHKey" = "yes" ]
 then
   echo "Download other repositories"
   eval $(ssh-agent -s);ssh-add $HOME/.ssh/github_key
+  cd $HOME/Pictures
   git clone https://github.com/moledoc/wallpapers.git
   cd $HOME/Documents
   git clone https://github.com/moledoc/dygmaraise.git

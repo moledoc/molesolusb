@@ -33,7 +33,7 @@ case "$file" in
     $IMAGES $file &
     ;;
   *.py|*.hs|*.txt|*.csv|*.md|*.scala)
-    $TERM -e "$EDITOR $file"
+    $TERMINAL -e "$EDITOR $file"
     ;;
   *.*sh)
     if [ "$1" = "launch" ]
@@ -41,7 +41,7 @@ case "$file" in
       $SHELL $file &
     elif [ "$1" = "edit" ]
     then
-      $TERM -e "$EDITOR $file"
+      $TERMINAL -e "$EDITOR $file"
     fi
     ;;
   *Bazecor*.AppImage)
@@ -51,9 +51,9 @@ case "$file" in
     $file&
     ;;
   */.*)
-    $TERM -e "$EDITOR $file"
+    $TERMINAL -e "$EDITOR $file"
     ;;
   *)
-    $TERM -e "$EDITOR $file"
+    $TERMINAL -e "$EDITOR $file"
     ;;
 esac
