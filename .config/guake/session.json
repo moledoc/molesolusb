@@ -1,0 +1,76 @@
+{
+    "schema_version": 2,
+    "timestamp": 1609415448,
+    "workspace": {
+        "0": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/utt/Documents/showcase"
+                        }
+                    ],
+                    "label": "Terminal",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "dual_v",
+                            "directory": null
+                        },
+                        {
+                            "type": "term",
+                            "directory": "/home/utt/Documents/parse.json"
+                        },
+                        {
+                            "type": "term",
+                            "directory": "/home/utt/Documents/parse.json"
+                        }
+                    ],
+                    "label": "Terminal",
+                    "custom_label_set": false
+                },
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/utt/Documents/parse.json"
+                        }
+                    ],
+                    "label": "Terminal",
+                    "custom_label_set": false
+                }
+            ]
+        ],
+        "1": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/utt"
+                        }
+                    ],
+                    "label": "Terminal",
+                    "custom_label_set": false
+                }
+            ]
+        ],
+        "2": [
+            [
+                {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/utt"
+                        }
+                    ],
+                    "label": "Terminal",
+                    "custom_label_set": false
+                }
+            ]
+        ]
+    }
+}

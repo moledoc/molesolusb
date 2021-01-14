@@ -1,0 +1,185 @@
+
+#	#################
+#	Moving/Navigating
+
+## Current directory
+alias cur=". ~/.scripts/current.sh"
+# alias cur="cd -"
+
+## Easier to move back.
+alias b="cd .."
+
+## Colored ls in one column
+alias ls="ls -1F  --color=\"always\""
+
+## Show all dir content
+alias la="ls -a"
+
+## Show long dir content
+alias ll="ls -lh"
+
+## Show all long dir content
+alias lal="ls -alh"
+
+## Show what was copied
+alias cp="cp -v"
+
+## Show what was moved
+alias mv="mv -v"
+## Colored grep (ripgrep)
+alias grep="rg --color=always --smart-case"
+
+## Easier to clear terminal
+alias c="clear"
+
+##	#################
+##	See specific dirs
+
+alias moledoc="$EDITOR $HOME/README.md"
+alias molesetup="$EDITOR $HOME/.setup.sh"
+alias repo="cd $HOME/Documents/molelinux"
+
+alias dl="cd $HOME/Downloads"
+alias doc="cd $HOME/Documents"
+alias pic="cd $HOME/Pictures"
+alias sc="cd $HOME/Documents/showcase"
+#alias music="cd $HOME/Music"
+#alias videos="cd $HOME/Videos"
+#alias later="cd $HOME/Downloads/Watch_later"
+#alias tst="cd $HOME/Documents/Testing"
+#alias proj="cd $HOME/Documents/Projects"
+#alias roll="cd $HOME/Documents/Rolling_files"
+alias config="cd $HOME/.config"
+alias scripts="cd $HOME/.scripts"
+alias uni="cd $HOME/Documents/masters_3semester" # alias for current semester
+
+
+#	##############
+#	Config related
+
+## Shortcuts for editing config files.
+alias cfz="$EDITOR $HOME/.zshrc"
+alias cfa="$EDITOR $HOME/.config/zsh/.zaliases"
+alias cfe="$EDITOR $HOME/.config/zsh/.zshenv"
+alias cfp="$EDITOR $HOME/.zprofile"
+alias cfnv="$EDITOR $HOME/.config/nvim/init.vim"
+alias cfv="$EDITOR $HOME/.vimrc"
+
+alias cfx="$EDITOR $HOME/.Xresources"
+#alias cfcoc="$EDITOR $HOME/.config/nvim/coc-settings.json"
+
+# Shortcut for sourcing config files.
+alias srcz="source $HOME/.zshrc"
+alias srca="source $HOME/.config/zsh/.zaliases"
+alias srce="source $HOME/.config/zsh/.zshenv"
+alias srcp="source $HOME/.zprofile"
+alias srcv="source $HOME/.config/nvim/init.vim"
+alias srcx="xrdb -merge $HOME/.Xresources;xrdb -load $HOME/.Xresources"
+
+# Shorcut to todo file
+alias todo="$EDITOR $HOME/todo"
+
+#	######
+#	Status
+
+alias sd="sudo shutdown now"
+alias rb="sudo reboot"
+#alias sleep=""
+
+## This is not shorter, but is more memorable.
+#alias battery="apm"
+
+## Connected to network.
+alias ping1="ping archlinux.org"
+
+## How many files in folder.
+alias count="ls | wc -l"
+alias counta="ls -a | wc -l"
+
+## Shortcut to see free space in computer.
+alias free="df -h"
+
+## Show directory and subdir sizes.
+alias size="du -h"
+
+
+#	########
+#	Programs
+
+## Firefox in private mode.
+alias pf="$BROWSER"
+
+## Use R console as calculator
+alias calc='R'
+
+## Shortcut for keepassxc
+alias passwd="keepassxc"
+
+## Shortcut for terminal emails
+#alias email="neomutt"
+
+## Shortcut for RSS reader (newsboat)
+#alias rss="newsboat"
+
+### Shortcuts for transmission-cli
+alias trmd="transmission-daemon"
+alias trm="transmission-remote"
+#alias trma="transmission-remote -a '$(sselp)'"
+alias trml="transmission-remote -l"
+
+## Meant for listening music
+alias mpvs="mpv --shuffle"
+
+## screen in UTF-8
+#alias screen="screen -U"
+
+## Remove detached screens
+#alias cleanscreen="screen -ls | tail -n +2 | head -n -1 | awk '{print $1}' | xargs -I {} screen -S {} -X quit"
+
+
+#	#########################################
+#	Other useful, convenient and cool aliases
+
+# alias agent="eval $(ssh-agent -s);ssh-add $HOME/.ssh/github_key"
+alias kagent="$TERM -e \"killall ssh-agent\""
+alias oagent="ls /tmp | grep ssh" 
+
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias gd="git diff"
+alias gl="git log"
+alias gpu="git pull"
+alias gcof="git checkout --"
+alias gco="git checkout" 
+alias gb="git branch"
+alias grb="git reset --hard"
+alias gr="git reset"
+
+## Shortcut for weather (can specify the city, default is defined by locale)
+alias weather="curl wttr.in"
+
+
+#	#######
+#	Scripts
+
+# update git repository directory
+alias updateRepo='updateRepo.zsh'
+
+## open directoryu/go-to dir w/ fzf
+alias od='source opend.zsh'
+
+#### Shortcut to open new terminal in the same path.
+#alias ot="sh $HOME/.scripts/new_cur_term"
+#
+#### Shortcut to open below dir in the same terminal
+#alias od="source opend"
+#### Shortcut to open dir in the same terminal
+#alias ofd="source opend $HOME"
+#### Shortcut to open below file in the same terminal
+#alias of="source openf"
+#### Shortcut to open file in the same terminal
+#alias off="source openf $HOME"
+
+
