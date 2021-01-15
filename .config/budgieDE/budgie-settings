@@ -1,66 +1,66 @@
-[/]
+[budgie-panel]
 dark-theme=true
 migration-level=1
 panels=['8dc03e14-56a3-11eb-942b-97d3c6f3b437']
 
-[applets/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
 alignment='start'
 name='Budgie Menu'
 position=0
 
-[applets/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
 alignment='start'
 name='Icon Task List'
 position=1
 
-[applets/{8dd42df2-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8dd42df2-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='System Tray'
 position=1
 
-[applets/{8dd48ba8-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8dd48ba8-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='Notifications'
 position=2
 
-[applets/{8ddadf26-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8ddadf26-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='Status Indicator'
 position=3
 
-[applets/{8de088e0-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8de088e0-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='User Indicator'
 position=4
 
-[applets/{8de1898e-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8de1898e-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='Clock'
 position=5
 
-[applets/{8de2475c-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{8de2475c-56a3-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='Raven Trigger'
 position=6
 
-[applets/{b9068cce-56a6-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{b9068cce-56a6-11eb-942b-97d3c6f3b437}]
 alignment='end'
 name='Night Light'
 position=0
 
-[instance/budgie-menu/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/instance/budgie-menu/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
 enable-menu-label=false
 menu-categories-hover=false
 menu-compact=false
 menu-headers=false
 
-[instance/icon-tasklist/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/instance/icon-tasklist/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
 grouping=true
 only-pinned=false
 pinned-launchers=['solus-sc.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop']
 show-all-windows-on-click=true
 
-[panels/{8dc03e14-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/panels/{8dc03e14-56a3-11eb-942b-97d3c6f3b437}]
 applets=['8dd42df2-56a3-11eb-942b-97d3c6f3b437', '8dc71d06-56a3-11eb-942b-97d3c6f3b437', '8de2475c-56a3-11eb-942b-97d3c6f3b437', '8dd48ba8-56a3-11eb-942b-97d3c6f3b437', '8ddadf26-56a3-11eb-942b-97d3c6f3b437', '8de088e0-56a3-11eb-942b-97d3c6f3b437', '8de1898e-56a3-11eb-942b-97d3c6f3b437', '8dc1243c-56a3-11eb-942b-97d3c6f3b437', 'b9068cce-56a6-11eb-942b-97d3c6f3b437']
 dock-mode=false
 enable-shadow=false
@@ -68,3 +68,15 @@ location='bottom'
 size=39
 theme-regions=true
 transparency='none'
+
+[budgie-raven]
+enable-week-numbers=true
+show-power-strip=true
+
+[budgie-wm]
+button-layout='appmenu:minimize,maximize,close'
+caffeine-mode=false
+center-windows=true
+
+[software-center]
+last-checked=int64 1610731582
