@@ -51,7 +51,7 @@ alias sc="cd $HOME/Documents/showcase"
 #alias roll="cd $HOME/Documents/Rolling_files"
 alias config="cd $HOME/.config"
 alias scripts="cd $HOME/.scripts"
-alias uni="cd $HOME/Documents/masters_3semester" # alias for current semester
+# alias uni="cd $HOME/Documents/masters_3semester" # alias for current semester
 
 
 #	##############
@@ -113,7 +113,7 @@ alias pf="$BROWSER"
 alias calc='R'
 
 ## Shortcut for keepassxc
-alias passwd="keepassxc"
+alias passwd="keepass"
 
 ## Shortcut for terminal emails
 #alias email="neomutt"
@@ -165,21 +165,10 @@ alias weather="curl wttr.in"
 #	Scripts
 
 # update git repository directory
-alias updateRepo='updateRepo.zsh'
+alias update_repo='update_repo.zsh'
+#
+# update build
+alias update_build='cp $HOME/Documents/molecurrent/* $HOME/Documents/molecurrent/.* $HOME;cp -r $HOME/Documents/molecurrent/* $HOME'
 
 ## open directoryu/go-to dir w/ fzf
 alias od='source opend.zsh'
-
-#### Shortcut to open new terminal in the same path.
-#alias ot="sh $HOME/.scripts/new_cur_term"
-#
-#### Shortcut to open below dir in the same terminal
-#alias od="source opend"
-#### Shortcut to open dir in the same terminal
-#alias ofd="source opend $HOME"
-#### Shortcut to open below file in the same terminal
-#alias of="source openf"
-#### Shortcut to open file in the same terminal
-#alias off="source openf $HOME"
-
-

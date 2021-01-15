@@ -87,9 +87,7 @@ Also presents a list of most commonly used programs, fonts etc.
 
 * doas over sudo, but if there is no doas option sudo works fine. Also, for doas and sudo both I use nopass option (using doas/sudo doesn\'t require password). Just my preference.
 * program: default terminal(gnome-terminal probably) (+ xterm just in case, if wanted)
-
-	* program: drop down terminal: guake 
-
+* program: drop down terminal: guake 
 * program: zsh (zsh-syntax-highlighting)
 * program: neovim(nvim)/vim 
 * program: firefox
@@ -100,22 +98,25 @@ Also presents a list of most commonly used programs, fonts etc.
 	* privacybadger plugin
 	* change privacy settings
 
-* program: fzf (also use as launcher -- see .scripts/open.zsh)
+* program: run launcher that comes with DE; if no runlauncher some good choices
+  * dmenu
+  * fzf_open script solution
+* program: fzf; also use as opener/launcher -- see .scripts/open.zsh
 * program: keepass (password manager)
 * program: redshift (nightlight, if doesn't exist)
 * program: sxhkd or WM/DE default keybindings editor.
 * program: htop
 * program: fd(-find) (replacement for find; faster)
 * program: ripgrep (replacement for grep; faster)
-* program: (any gui filemanager is fine (nemo,thunar,pcmanfm,dolphin etc))
+* program: (any gui filemanager is fine (nautilus,nemo,thunar,pcmanfm,dolphin etc))
 * program: nitrogen (if there is no wallpaper handling in the DE or WM)
 * program: zathura (zathura-pdf-mupdf/-poppler; for viewing pdf\'s)
-* program: mpv (video and audio files); vlc for backup, explore mpd for music(?)
+* program: (gnome-)mpv (video and audio files); vlc for backup, explore mpd for music(?)
 * program: IDE/Editor for development (corresponding to the language, eg RStudio,VSCode,Intellij etc)
 * program: tmux (multiplexer) -- need to learn to use
 
 * RE-EVALUATING THIS -- might stick with default fonts (unless they have some deficiency -- font: fonts-hermit (might have different package name)
-* colorscheme: gruvbox colorscheme
+* colorscheme: gruvbox colorscheme, slightly changed (I use gruvbox yellow and black as text and foreground color)
 * options: swap caps and esc (not needed if programmable keyboard), setxkbmap -option caps:swapescape 
 * options: have keybindings for different language, eg setxkbmap -layout us
 
@@ -127,7 +128,6 @@ Ground rules:
 * nvim/vim managing is centered around **alt** key
 * (drop down) terminal managing is centered around **ctrl** key
 
-
 ## Notes
 
 ### Cinnamon DE
@@ -135,17 +135,44 @@ Ground rules:
 * To import keyboard shortcuts, make sure dconf-cli package is installed.
 
 ```sh
-dconf dump /org/cinnamon/desktop/keybindings/ > $HOME/.config/cinnamonDE/dconf-settings.conf # export
-dconf dump /org/cinnamon/desktop/keybindings/ < $HOME/.config/cinnamonDE/dconf-settings.conf # import
+# export
+dconf dump /org/cinnamon/desktop/keybindings/ > $HOME/.config/cinnamonDE/wm-settings
+dconf dump /org/cinnamon/theme/ < .config/cinnamonDE/theme-settings.conf
+# import
+dconf load /org/cinnamon/desktop/keybindings/ < $HOME/.config/cinnamonDE/wm-settings
+dconf load /org/cinnamon/theme/ < $HOME/.config/cinnamonDE/theme-settings.conf
 ```
 
 ### Budgie DE
 
-* TODO: similar to cinnamonDE + DESKTOP THEME
+```sh
+# export 
+dconf dump /com/solus-project/budgie-panel/ > $HOME/.config/budgieDE/panel-settings
+dconf dump /com/solus-project/budgie-raven/ > $HOME/.config/budgieDE/raven-settings
+dconf dump /com/solus-project/budgie-wm/ > $HOME/.config/budgieDE/wm-settings
+# import 
+dconf load /com/solus-project/budgie-panel < $HOME/.config/budgieDE/panel-settings
+dconf load /com/solus-project/budgie-raven < $HOME/.config/budgieDE/raven-settings
+dconf load /com/solus-project/budgie-wm < $HOME/.config/budgieDE/wm-settings
+```
 
 ### gnome-terminal
 
-* TODO: similar to cinnamonDE
+```sh
+# export 
+dconf dump /org/gnome/terminal/ > $HOME/.config/gnome-terminal/gnome-terminal-settings
+# import 
+dconf load /org/gnome/terminal < $HOME/.config/gnome-terminal/gnome-terminal-settings
+```
+
+### guake terminal
+
+```sh
+# export
+guake --save-preferences $HOME/.config/guake/.guakeconf &
+# import
+guake --restore-preferences $HOME/.config/guake/.guakeconf &
+```
 
 ### RStudio
 
@@ -160,8 +187,7 @@ install.packages('xml2')
 ## TODO
 
 * improve this README
-* make this build
-* Keep this build up-to-date
+* make build more general
 
 ## Author
 

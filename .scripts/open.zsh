@@ -3,7 +3,18 @@
 # README: Script to open or focus given file with defined default opener, depending on the file extension.
 
 # file full path, filename and extension.
-file=$(fzfOpen.zsh)
+if [ -n "$1" ]
+then
+  file="$1"
+  given="yes"
+else
+  file=$(fd --hidden --ignore-case --exclude '.mozilla' -E '.cache' -E '.local' -E '.git' . /bin /usr/bin/ $HOME $HOME/.AppImages | fzf)
+  case "$file" in
+    *.*sh)
+      action=$(echo "edit\nlaunch" | fzf)
+      ;;
+  esac
+fi
 filename=${file##*\/}
 filepath=${file%\/*}
 extension=${filename##*\.}
@@ -14,46 +25,52 @@ then
   exit
 fi
 
+# if is directory, open it in gui file manager
+if [ -d "$file" ]
+then
+  $FILEMANAGER $file &
+  exit
+fi
+
 # check if file param contains defined cases. 
 # If yes, then do according to case.
 case "$file" in
   */bin/*)
-    $file &
+    $file
     ;;
   *.R|*.Rmd)
     rstudio $file &
     ;;
   *.pdf)
-    zathura $file &
+    $READER $file&
     ;;
   *.mp3|*.mp4)
-    mpv $file &
+    $MEDIA $file&
     ;;
   *.jpg|*.jpeg|*.png)
     $IMAGES $file &
     ;;
   *.py|*.hs|*.txt|*.csv|*.md|*.scala)
-    $TERMINAL -e "$EDITOR $file"
+    $EDITOR $file
     ;;
   *.*sh)
-    if [ "$1" = "launch" ]
+    if [ "$given" = "yes" ] || [ "$action" = "edit" ]
     then
-      $SHELL $file &
-    elif [ "$1" = "edit" ]
-    then
-      $TERMINAL -e "$EDITOR $file"
+      $EDITOR $file
+    else
+      $SHELL $file
     fi
     ;;
   *Bazecor*.AppImage)
     sudo chmod 666  /dev/ttyACM0; $file&
     ;;
   *.AppImage)
-    $file&
+    $file
     ;;
   */.*)
-    $TERMINAL -e "$EDITOR $file"
+    $EDITOR $file
     ;;
   *)
-    $TERMINAL -e "$EDITOR $file"
+    $EDITOR $file
     ;;
 esac

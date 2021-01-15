@@ -8,13 +8,12 @@ $SHELL $HOME/.scripts/readmeGen.zsh
 # define repository location
 repo=$HOME/Documents/molecurrent
 
-#dconf dump /org/cinnamon/desktop/keybindings/ > $HOME/.config/cinnamonDE/dconf-settings.conf # export (cinnamon keybindings)
-#dconf dump /org/cinnamon/theme/ > $HOME/.config/cinnamonDE/theme-settings.conf # export theme settings
-#dconf dump /org/gnome/terminal/ > $HOME/.config/gnome-terminal/dconf-settings.conf # gnome-terminal settings
-guake --save-preferences $HOME/.config/guake/.guakeconf # save guake keybindings
+# save terminal, DE etc settings
+save_settings.zsh
 
 cp -RL $HOME/.config/zsh $repo/.config
 cp -RL $HOME/.config/cinnamonDE $repo/.config
+cp -RL $HOME/.config/budgieDE $repo/.config
 cp -RL $HOME/.config/gnome-terminal $repo/.config
 cp -RL $HOME/.config/guake $repo/.config
 cp -RL $HOME/.config/gruvbox-xml $repo/.config
@@ -23,6 +22,6 @@ cp -RL $HOME/.config/rstudio $repo/.config # generated rstudio config. If rstudi
 cp -RL $HOME/.scripts $repo/
 
 
-cp $HOME/.setup.sh $HOME/.vimrc $HOME/.xinitrc $HOME/.Xresources $HOME/.zprofile $HOME/.zshrc $HOME/README.md $HOME/.profile $repo
-
+cp $HOME/.setup.sh $HOME/.vimrc $HOME/.xinitrc $HOME/.Xresources $HOME/.zprofile $HOME/.zshrc $HOME/README.md $repo
+# $HOME/.profile 
 

@@ -1,9 +1,7 @@
 #!/bin/zsh
 
-# README: Run launcher using fzf, similar to dmenu and rofi
+# README: Run launcher using fzf, similar to dmenu and rofi.
 
-# $TERMINAL -e "fzf $* < /proc/$$/fd/0 > /proc/$$/fd/1"
-$TERMINAL -e "fd --hidden --ignore-case --exclude '.mozilla' -E '.cache' -E '.local' -E '.git' . /bin /usr/bin/ $HOME $HOME/.AppImages | fzf $* > /proc/$$/fd/1"
-# $TERMINAL -e "fzf $*"
+$TERMINAL -- /home/utt/Documents/molecurrent/.scripts/open.zsh
 
 

@@ -13,9 +13,10 @@ installCmd="eopkg install"
 pkg_manager="eopkg"
 
 # Download packages.
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git"
-additional_pkg="vlc redshift wget tmux" 
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf-cli"
+additional_pkg="redshift wget tmux eog gnome-mpv" #vlc 
 
+# eog - eye of gnome
 # dconf-cli to load cinnamon keyboard shortcuts in/out
 # wmctrl to list window processes
 programming_pkg="rstudio vscode"
@@ -114,8 +115,11 @@ then
 fi
 
 ## make guake dropdown terminal autostarting
-#echo "Make guake dropdown terminal autostarting"
-#sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
+echo "Make guake dropdown terminal autostarting"
+sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
+
+## load DE settings
+$new_shell $HOME/.scripts/load_settings.zsh
 
 #echo "Visit github repo and add the ssh public key to allowed ssh keys (public key should be copied to the clipboard)!"
 echo "Setup DONE!"
