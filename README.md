@@ -1,5 +1,5 @@
 
-# mole\<build\>
+# molecurrent
 
 ## Installation
 
@@ -52,11 +52,11 @@ sudo apt install git # Debian(/Ubuntu) based
 sudo eopkg install git # Solus 
 ```
 
-* Go to $HOME/Documents/ and clone mole\<build\> repository.
+* Go to $HOME/Documents/ and clone molecurrent repository.
 
 ```sh
 cd $HOME/Documents
-git clone https://github.com/moledoc/mole\<build\>.git
+git clone https://github.com/moledoc/molecurrent.git
 ```
 
 * Run the setup script.
@@ -66,7 +66,7 @@ git clone https://github.com/moledoc/mole\<build\>.git
 	* **CURRENTLY SET FOR SOLUS!!!**
 
 ```sh
-cd mole\<build\>
+cd molecurrent
 sh .setup.sh
 ```
 
@@ -75,12 +75,12 @@ sh .setup.sh
 ```sh
 ln -s $HOME/.config/zsh/.z_apt_aliases    $HOME/.config/zsh/.z_pm_aliases # Debian based
 ln -s $HOME/.config/zsh/.z_pacman_aliases $HOME/.config/zsh/.z_pm_aliases # Arch based
-ln -s $HOME/.config/zsh/.z_eopkg_aliases     $HOME/.config/zsh/.z_pm_aliases # Solus
+ln -s $HOME/.config/zsh/.z_eopkg_aliases  $HOME/.config/zsh/.z_pm_aliases # Solus
 ```
 
 * The general setup should be done. Some tweaking might be necessary, but it is not covered in this readme.
 
-## mole\<build\> setup
+## molecurrent setup
 
 This subsection describes authors preferences in programs.
 Also presents a list of most commonly used programs, fonts etc.
