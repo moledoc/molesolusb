@@ -14,7 +14,7 @@ window-position=(508, 177)
 word-size=64
 
 [control-center]
-last-panel='wifi'
+last-panel='keyboard'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -157,7 +157,7 @@ night-light-schedule-to=0.0
 night-light-temperature=uint32 2400
 
 [settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/']
 email=['<Super>m']
 home=['<Primary><Super>e']
 next=['AudioNext']
@@ -202,7 +202,6 @@ command='signal-desktop&'
 name='signal'
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom7]
-binding='<Super>e'
 command='fzf_open.zsh'
 name='fzf_open'
 
@@ -210,6 +209,11 @@ name='fzf_open'
 binding='<Primary><Alt>r'
 command='load_settings.zsh'
 name='load_settings'
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom9]
+binding='<Super>e'
+command='guake -n $HOME -e "open.zsh;guake --hide;exit" --show'
+name='open'
 
 [settings-daemon/plugins/power]
 idle-dim=true
