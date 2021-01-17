@@ -15,6 +15,7 @@ if [ "$DE" = 'budgie-desktop' ]
 then
   dconf load /com/solus-project/ < $HOME/.config/budgieDE/budgie-settings
 elif [ "$DE" = 'cinnamon' ]
+then
   dconf load /org/cinnamon/ < $HOME/.config/cinnamonDE/cinnamon-settings
 fi
 

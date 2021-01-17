@@ -1,82 +1,56 @@
 [budgie-panel]
-dark-theme=true
 migration-level=1
-panels=['8dc03e14-56a3-11eb-942b-97d3c6f3b437']
+panels=['c15f9286-57ea-11eb-b44c-2f0154a25d6e']
 
-[budgie-panel/applets/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{c1604d3e-57ea-11eb-b44c-2f0154a25d6e}]
 alignment='start'
 name='Budgie Menu'
 position=0
 
-[budgie-panel/applets/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{c169d0de-57ea-11eb-b44c-2f0154a25d6e}]
 alignment='start'
 name='Icon Task List'
 position=1
 
-[budgie-panel/applets/{8dd42df2-56a3-11eb-942b-97d3c6f3b437}]
+[budgie-panel/applets/{c17a38c0-57ea-11eb-b44c-2f0154a25d6e}]
 alignment='end'
 name='System Tray'
-position=1
-
-[budgie-panel/applets/{8dd48ba8-56a3-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='Notifications'
-position=2
-
-[budgie-panel/applets/{8ddadf26-56a3-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='Status Indicator'
-position=3
-
-[budgie-panel/applets/{8de088e0-56a3-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='User Indicator'
-position=4
-
-[budgie-panel/applets/{8de1898e-56a3-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='Clock'
-position=5
-
-[budgie-panel/applets/{8de2475c-56a3-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='Raven Trigger'
-position=6
-
-[budgie-panel/applets/{b9068cce-56a6-11eb-942b-97d3c6f3b437}]
-alignment='end'
-name='Night Light'
 position=0
 
-[budgie-panel/instance/budgie-menu/{8dc1243c-56a3-11eb-942b-97d3c6f3b437}]
-enable-menu-label=false
-menu-categories-hover=false
-menu-compact=false
-menu-headers=false
+[budgie-panel/applets/{c17af7d8-57ea-11eb-b44c-2f0154a25d6e}]
+alignment='end'
+name='Notifications'
+position=1
 
-[budgie-panel/instance/icon-tasklist/{8dc71d06-56a3-11eb-942b-97d3c6f3b437}]
-grouping=true
-only-pinned=false
-pinned-launchers=['solus-sc.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop', 'org.gnome.Terminal.desktop']
-show-all-windows-on-click=true
+[budgie-panel/applets/{c18190f2-57ea-11eb-b44c-2f0154a25d6e}]
+alignment='end'
+name='Status Indicator'
+position=2
 
-[budgie-panel/panels/{8dc03e14-56a3-11eb-942b-97d3c6f3b437}]
-applets=['8dd42df2-56a3-11eb-942b-97d3c6f3b437', '8dc71d06-56a3-11eb-942b-97d3c6f3b437', '8de2475c-56a3-11eb-942b-97d3c6f3b437', '8dd48ba8-56a3-11eb-942b-97d3c6f3b437', '8ddadf26-56a3-11eb-942b-97d3c6f3b437', '8de088e0-56a3-11eb-942b-97d3c6f3b437', '8de1898e-56a3-11eb-942b-97d3c6f3b437', '8dc1243c-56a3-11eb-942b-97d3c6f3b437', 'b9068cce-56a6-11eb-942b-97d3c6f3b437']
-dock-mode=false
-enable-shadow=false
+[budgie-panel/applets/{c1859cec-57ea-11eb-b44c-2f0154a25d6e}]
+alignment='end'
+name='User Indicator'
+position=3
+
+[budgie-panel/applets/{c1867b08-57ea-11eb-b44c-2f0154a25d6e}]
+alignment='end'
+name='Clock'
+position=4
+
+[budgie-panel/applets/{c1876f72-57ea-11eb-b44c-2f0154a25d6e}]
+alignment='end'
+name='Raven Trigger'
+position=5
+
+[budgie-panel/panels/{c15f9286-57ea-11eb-b44c-2f0154a25d6e}]
+applets=['c18190f2-57ea-11eb-b44c-2f0154a25d6e', 'c1867b08-57ea-11eb-b44c-2f0154a25d6e', 'c17af7d8-57ea-11eb-b44c-2f0154a25d6e', 'c169d0de-57ea-11eb-b44c-2f0154a25d6e', 'c17a38c0-57ea-11eb-b44c-2f0154a25d6e', 'c1859cec-57ea-11eb-b44c-2f0154a25d6e', 'c1876f72-57ea-11eb-b44c-2f0154a25d6e', 'c1604d3e-57ea-11eb-b44c-2f0154a25d6e']
 location='bottom'
 size=39
-theme-regions=true
 transparency='none'
-
-[budgie-raven]
-enable-week-numbers=true
-show-power-strip=true
 
 [budgie-wm]
 button-layout='appmenu:minimize,maximize,close'
-caffeine-mode=false
 center-windows=true
 
 [software-center]
-last-checked=int64 1610731582
+last-checked=int64 1610901974

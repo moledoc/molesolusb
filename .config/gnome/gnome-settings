@@ -138,6 +138,14 @@ start-with-sidebar=true
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[nm-applet/eap/be2f4faf-c355-4271-af05-1964d6bf3ad9]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/c88241d3-d7fb-47b3-a844-ca478e2b6fb7]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [photos]
 window-maximized=true
 

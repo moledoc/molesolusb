@@ -3,7 +3,7 @@
 # README: Update the current build to set git repo directory.
 
 # run readmeGen
-$SHELL $HOME/.scripts/readmeGen.zsh
+$SHELL $HOME/.scripts/gen_readme.zsh
 
 # define repository location
 repo=$HOME/Documents/molecurrent
@@ -14,7 +14,7 @@ save_settings.zsh
 cp -RL $HOME/.config/zsh $repo/.config
 cp -RL $HOME/.config/cinnamonDE $repo/.config
 cp -RL $HOME/.config/budgieDE $repo/.config
-cp -RL $HOME/.config/gnome-terminal $repo/.config
+cp -RL $HOME/.config/gnome $repo/.config
 cp -RL $HOME/.config/guake $repo/.config
 cp -RL $HOME/.config/gruvbox-xml $repo/.config
 cp -RL $HOME/.config/RStudio $repo/.config # Self added RStudio related files, such as gruvbox theme

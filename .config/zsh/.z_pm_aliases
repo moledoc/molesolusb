@@ -1,0 +1,45 @@
+
+# 	###################
+# 	package manager
+### Some aliases are just for documenting some commands,
+### even though there is the man pages.
+
+## Run update and upgrade.
+alias update='sudo eopkg upgrade'
+
+## Install a program
+alias install="sudo eopkg install"
+alias reinstall="sudo eopkg install --reinstall"
+alias yinstall="sudo eopkg install --yes-all"
+
+## Uninstall + packages w/ dependencies
+alias uninstall="sudo eopkg autoremove"
+## Uninstall a program
+alias remove="sudo eopkg remove"
+## Uninstall + tagged conf files 
+alias purge="sudo eopkg purge"
+## Remove orphaned pkgs
+alias orphaned="sudo eopkg remove-orphans"
+
+## dry run (for all commands -n or --dry-run)
+alias dry="--dry-run"
+
+## add-repo
+alias add-repo="sudo eopkg add-repo"
+
+## check pkg
+alias check="sudo eopkg check"
+
+## eopkg command help
+alias help="eopkg help"
+
+## look what packages you have for <program> 
+## or info about particular program
+alias search="eopkg search"
+# find files about given pkg
+alias fsearch="eopkg search-file"
+alias info="eopkg info"
+alias installed="eopkg list-installed"
+
+## count packages
+alias bloated="eopkg list-installed | wc -l"

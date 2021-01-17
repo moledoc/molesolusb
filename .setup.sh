@@ -8,13 +8,13 @@ sudo passwd
 
 # update repository
 # CHANGE ACCORDING TO PACKAGE MANAGER!!!
-updateCmd="sudo eopkg upgrade"
-installCmd="eopkg install"
+updateCmd="sudo eopkg upgrade -y"
+installCmd="eopkg install -y"
 pkg_manager="eopkg"
 
 # Download packages.
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf-cli"
-additional_pkg="redshift wget tmux eog gnome-mpv" #vlc 
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf"
+additional_pkg="redshift wget tmux eog gnome-mpv texlive pandoc" #vlc 
 
 # eog - eye of gnome
 # dconf-cli to load cinnamon keyboard shortcuts in/out
@@ -23,6 +23,8 @@ programming_pkg="rstudio vscode"
 
 if [ ! -z "$installCmd" ]
 then
+    echo "Update package manager"
+    $updateCmd
 	echo "Installing packages: $packages $programming_pkg #$additional_pkg"
 	sudo $installCmd $packages $programming_pkg #$additional_pkg 
   echo "Packages installed"
@@ -67,7 +69,7 @@ echo "IGNORE THESE cp ERRORS"
 # Copy contents of the repository to the right places.
 cp -r .scripts .config $HOME > /dev/null
 # cp .setup.sh .x* .X* .z* $HOME
-cp .* $HOME
+cp . .* $HOME
 echo "Repository contents copied to $HOME"
 
 # add symlink to package manager aliases
@@ -120,6 +122,9 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
 $new_shell $HOME/.scripts/load_settings.zsh
+
+## load firefox settings
+$new_shell $HOME/.scripts/firefox-bu.zsh
 
 #echo "Visit github repo and add the ssh public key to allowed ssh keys (public key should be copied to the clipboard)!"
 echo "Setup DONE!"
