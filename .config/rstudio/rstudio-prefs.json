@@ -48,5 +48,6 @@
         "console_left_on_top": false,
         "console_right_on_top": true
     },
-    "custom_shell_command": "/bin/zsh"
+    "custom_shell_command": "/bin/zsh",
+    "show_margin": false
 }
