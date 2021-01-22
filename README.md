@@ -177,7 +177,7 @@ guake --restore-preferences $HOME/.config/guake/.guakeconf &
 ### RStudio
 
 * Get gruvbox theme from https://tmtheme-editor.herokuapp.com/#!/editor/theme/Gruvbox (should also be in repo)
-* Under 'Tools > Global Options' change keybindings to vim, font to hermit and add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into write place, so no manual intervention needed).
+* Under 'Tools > Global Options' change keybindings to vim, font to hermit and add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into right place, so no manual intervention needed).
 
 ```r
 install.packages('xml2')

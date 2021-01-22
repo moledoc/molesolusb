@@ -14,7 +14,7 @@ window-position=(508, 177)
 word-size=64
 
 [control-center]
-last-panel='keyboard'
+last-panel='background'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
