@@ -14,7 +14,7 @@ window-position=(508, 177)
 word-size=64
 
 [control-center]
-last-panel='applications'
+last-panel='background'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -22,9 +22,9 @@ mag-factor=1.0
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/solus/SolusFresh.png'
-primary-color='#000000'
-secondary-color='#000000'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-24-23-43-13-88.jpeg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/input-sources]
 current=uint32 0
@@ -52,9 +52,9 @@ two-finger-scrolling-enabled=true
 [desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/solus/SolusFresh.png'
-primary-color='#000000'
-secondary-color='#000000'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-24-23-43-13-88.jpeg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
