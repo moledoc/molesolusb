@@ -14,7 +14,7 @@ window-position=(508, 177)
 word-size=64
 
 [control-center]
-last-panel='background'
+last-panel='applications'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -33,13 +33,17 @@ xkb-options=['lv3:ralt_switch']
 
 [desktop/interface]
 cursor-theme='breeze_cursors'
-gtk-im-module='gtk-im-context-simple'
+gtk-im-module='ibus'
 gtk-theme='Plata-Noir'
 icon-theme='Papirus'
+show-battery-percentage=true
 toolkit-accessibility=false
 
 [desktop/peripherals/keyboard]
 numlock-state=true
+
+[desktop/peripherals/mouse]
+speed=0.44285714285714284
 
 [desktop/peripherals/touchpad]
 send-events='enabled'

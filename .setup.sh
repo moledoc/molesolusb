@@ -11,20 +11,23 @@ sudo passwd
 updateCmd="sudo eopkg upgrade -y"
 installCmd="eopkg install -y"
 pkg_manager="eopkg"
+extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
 
 # Download packages.
 packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf"
-additional_pkg="redshift wget tmux eog gnome-mpv texlive pandoc" #vlc 
+additional_pkg="redshift wget tmux eog gnome-mpv texlive pandoc libxtst-devel libpng-devel" #vlc 
 
 # eog - eye of gnome
 # dconf-cli to load cinnamon keyboard shortcuts in/out
 # wmctrl to list window processes
+# libxtst-devel libpng-devel -- for some R packages
 programming_pkg="rstudio vscode"
 
 if [ ! -z "$installCmd" ]
 then
-    echo "Update package manager"
-    $updateCmd
+  echo "Update package manager"
+  $updateCmd
+  $extraCmds
 	echo "Installing packages: $packages $programming_pkg #$additional_pkg"
 	sudo $installCmd $packages $programming_pkg #$additional_pkg 
   echo "Packages installed"

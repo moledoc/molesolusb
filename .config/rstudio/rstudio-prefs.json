@@ -49,5 +49,7 @@
         "console_right_on_top": true
     },
     "custom_shell_command": "/bin/zsh",
-    "show_margin": false
+    "show_margin": false,
+    "jobs_tab_visibility": "shown",
+    "real_time_spellchecking": false
 }
