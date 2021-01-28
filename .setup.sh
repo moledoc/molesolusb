@@ -6,6 +6,9 @@
 echo "Set root passwd"
 sudo passwd
 
+user=$(who)
+user${user%% *}
+
 # update repository
 # CHANGE ACCORDING TO PACKAGE MANAGER!!!
 updateCmd="sudo eopkg upgrade -y"
@@ -128,6 +131,14 @@ $new_shell $HOME/.scripts/load_settings.zsh
 
 ## load firefox settings
 $new_shell $HOME/.scripts/firefox-bu.zsh
+
+## get and configure doas
+git clone https://github.com/slicer69/doas $HOME/Documents/doas
+cd $HOME/Documents/doas
+make
+sudo make install clean
+sudo mkdir /usr/local/etc
+echo "permit $user nopass" | sudo tee /usr/local/etc/doas.conf
 
 #echo "Visit github repo and add the ssh public key to allowed ssh keys (public key should be copied to the clipboard)!"
 echo "Setup DONE!"

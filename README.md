@@ -24,7 +24,7 @@ EDITOR=vi;visudo # for sudo
 # comment in line
 # %wheel ALL=(ALL) NOPASSWD: ALL
 # %sudo ALL=(ALL) NOPASSWD: ALL
-echo "permit <user> nopass" > /usr/etc/doas.conf # for doas
+echo "permit <user> nopass" > /usr/local/etc/doas.conf # for doas
 
 # The above is the authors preference.
 # If it is too unsecure for some, use
@@ -32,7 +32,14 @@ echo "permit <user> nopass" > /usr/etc/doas.conf # for doas
 visudo # for sudo
 # comment in line
 # %wheel ALL=(ALL) ALL
-echo "permit <user> as root" > /usr/etc/doas.conf # for doas (check doas manual for this option)
+echo "permit <user> as root" > /usr/local/etc/doas.conf # for doas (check doas manual for this option)
+```
+
+or as user, one can do for doas
+
+```sh
+# example
+echo "permit <user> nopass" > /usr/local/etc/doas.conf
 ```
 
 * Log out as root, log in as <user>.

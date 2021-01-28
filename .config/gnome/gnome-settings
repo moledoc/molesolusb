@@ -13,6 +13,12 @@ target-units='radian'
 window-position=(508, 177)
 word-size=64
 
+[calendar]
+active-view='month'
+window-maximized=true
+window-position=(0, 0)
+window-size=(1280, 944)
+
 [control-center]
 last-panel='background'
 
@@ -25,6 +31,9 @@ picture-options='zoom'
 picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-24-23-43-13-88.jpeg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
+
+[desktop/calendar]
+show-weekdate=false
 
 [desktop/input-sources]
 current=uint32 0
