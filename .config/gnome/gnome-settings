@@ -20,7 +20,7 @@ window-position=(0, 0)
 window-size=(1280, 944)
 
 [control-center]
-last-panel='background'
+last-panel='display'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -28,7 +28,7 @@ mag-factor=1.0
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-24-23-43-13-88.jpeg'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-2020-the-mandalorian-yoda-artwork-4k-jp.jpeg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -61,7 +61,7 @@ two-finger-scrolling-enabled=true
 [desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-24-23-43-13-88.jpeg'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-2020-the-mandalorian-yoda-artwork-4k-jp.jpeg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -135,6 +135,7 @@ toggle-tiled-right=['<Super>l']
 [nautilus/list-view]
 default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'where', 'date_modified', 'date_modified_with_time', 'date_accessed', 'recency', 'starred', 'detailed_type']
 default-visible-columns=['name', 'size', 'date_modified', 'starred']
+default-zoom-level='standard'
 
 [nautilus/preferences]
 default-folder-viewer='list-view'
@@ -143,7 +144,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(890, 550)
+initial-size=(890, 559)
 maximized=false
 start-with-sidebar=true
 

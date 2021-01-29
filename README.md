@@ -39,7 +39,7 @@ or as user, one can do for doas
 
 ```sh
 # example
-echo "permit <user> nopass" > /usr/local/etc/doas.conf
+echo "permit <user> nopass" | sudo tee /usr/local/etc/doas.conf
 ```
 
 * Log out as root, log in as <user>.
