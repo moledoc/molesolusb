@@ -20,7 +20,7 @@ window-position=(0, 0)
 window-size=(1280, 944)
 
 [control-center]
-last-panel='display'
+last-panel='applications'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -43,8 +43,8 @@ xkb-options=['lv3:ralt_switch']
 [desktop/interface]
 cursor-theme='breeze_cursors'
 gtk-im-module='ibus'
-gtk-theme='Plata-Noir'
-icon-theme='Papirus'
+gtk-theme='Plata-Noir-Compact'
+icon-theme='Papirus-Dark'
 show-battery-percentage=true
 toolkit-accessibility=false
 
@@ -97,6 +97,7 @@ toggle-on-all-workspaces=['<Super>s']
 
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
+num-workspaces=5
 
 [eog/ui]
 sidebar=false
@@ -144,9 +145,12 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(890, 559)
+initial-size=(983, 550)
 maximized=false
 start-with-sidebar=true
+
+[nm-applet]
+disable-connected-notifications=true
 
 [nm-applet/eap/9a4d30ce-e118-4180-a020-ca3fccb3a113]
 ignore-ca-cert=false
@@ -157,6 +161,10 @@ ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
 [nm-applet/eap/c88241d3-d7fb-47b3-a844-ca478e2b6fb7]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/e21afd8a-4917-4a86-b582-ff2e2e6e0459]
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
@@ -235,6 +243,7 @@ sleep-inactive-ac-timeout=1200
 sleep-inactive-battery-timeout=1200
 
 [settings-daemon/plugins/xsettings]
+hinting='slight'
 overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
 
 [terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
