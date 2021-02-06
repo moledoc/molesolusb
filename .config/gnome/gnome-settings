@@ -97,7 +97,7 @@ toggle-on-all-workspaces=['<Super>s']
 
 [desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
-num-workspaces=5
+num-workspaces=4
 
 [eog/ui]
 sidebar=false
