@@ -3,6 +3,21 @@ dark-theme=true
 migration-level=1
 panels=['86eb9930-6805-11eb-9a2b-f81654a5b5ae', 'c15f9286-57ea-11eb-b44c-2f0154a25d6e']
 
+[budgie-panel/applets/{18512966-6807-11eb-ba0b-f81654a5b5ae}]
+alignment='center'
+name='Spacer'
+position=2
+
+[budgie-panel/applets/{21245abc-688a-11eb-a148-f81654a5b5ae}]
+alignment='start'
+name='Budgie Restart'
+position=2
+
+[budgie-panel/applets/{293ee5ce-6807-11eb-ba0b-f81654a5b5ae}]
+alignment='center'
+name='Spacer'
+position=4
+
 [budgie-panel/applets/{382f5816-67e4-11eb-a340-f81654a5b5ae}]
 alignment='end'
 name='Night Light'
@@ -11,47 +26,17 @@ position=0
 [budgie-panel/applets/{3aa9977e-6806-11eb-ba0b-f81654a5b5ae}]
 alignment='center'
 name='Workspace Switcher'
-position=3
-
-[budgie-panel/applets/{4c543336-6805-11eb-bcf7-f81654a5b5ae}]
-alignment='start'
-name='Show Desktop Button'
-position=3
-
-[budgie-panel/applets/{5816f630-6806-11eb-ba0b-f81654a5b5ae}]
-alignment='center'
-name='Separator'
-position=2
-
-[budgie-panel/applets/{610a9580-6806-11eb-ba0b-f81654a5b5ae}]
-alignment='center'
-name='Caffeine'
-position=1
+position=0
 
 [budgie-panel/applets/{75114f2e-6806-11eb-ba0b-f81654a5b5ae}]
 alignment='center'
 name='Task List'
-position=4
-
-[budgie-panel/applets/{8b570586-6805-11eb-9a2b-f81654a5b5ae}]
-alignment='center'
-name='Budgie Restart'
-position=0
-
-[budgie-panel/applets/{bfb1755a-6805-11eb-9a2b-f81654a5b5ae}]
-alignment='start'
-name='Budgie Restart'
-position=2
+position=1
 
 [budgie-panel/applets/{c1604d3e-57ea-11eb-b44c-2f0154a25d6e}]
 alignment='start'
 name='Budgie Menu'
 position=0
-
-[budgie-panel/applets/{c169d0de-57ea-11eb-b44c-2f0154a25d6e}]
-alignment='start'
-name='Icon Task List'
-position=4
 
 [budgie-panel/applets/{c17a38c0-57ea-11eb-b44c-2f0154a25d6e}]
 alignment='end'
@@ -83,15 +68,32 @@ alignment='end'
 name='Raven Trigger'
 position=5
 
-[budgie-panel/instance/icon-tasklist/{c169d0de-57ea-11eb-b44c-2f0154a25d6e}]
-pinned-launchers=['solus-sc.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop', 'io.github.GnomeMpv.desktop', 'rhythmbox.desktop', 'org.gnome.Terminal.desktop']
+[budgie-panel/applets/{f40c01ec-6889-11eb-a148-f81654a5b5ae}]
+alignment='start'
+name='Places'
+position=4
+
+[budgie-panel/applets/{f5c34644-6889-11eb-a148-f81654a5b5ae}]
+alignment='start'
+name='Show Desktop Button'
+position=3
+
+[budgie-panel/instance/places-indicator/{f40c01ec-6889-11eb-a148-f81654a5b5ae}]
+expand-places=true
+show-label=false
+
+[budgie-panel/instance/spacer/{18512966-6807-11eb-ba0b-f81654a5b5ae}]
+size=15
+
+[budgie-panel/instance/spacer/{293ee5ce-6807-11eb-ba0b-f81654a5b5ae}]
+size=15
 
 [budgie-panel/instance/workspaces/{3aa9977e-6806-11eb-ba0b-f81654a5b5ae}]
 addbutton-visibility='never'
 
 [budgie-panel/panels/{86eb9930-6805-11eb-9a2b-f81654a5b5ae}]
-applets=['3aa9977e-6806-11eb-ba0b-f81654a5b5ae', '5816f630-6806-11eb-ba0b-f81654a5b5ae', '610a9580-6806-11eb-ba0b-f81654a5b5ae', '8b570586-6805-11eb-9a2b-f81654a5b5ae', '75114f2e-6806-11eb-ba0b-f81654a5b5ae']
-autohide='intelligent'
+applets=['3aa9977e-6806-11eb-ba0b-f81654a5b5ae', '75114f2e-6806-11eb-ba0b-f81654a5b5ae']
+autohide='automatic'
 dock-mode=true
 enable-shadow=false
 location='left'
@@ -100,12 +102,12 @@ theme-regions=false
 transparency='always'
 
 [budgie-panel/panels/{c15f9286-57ea-11eb-b44c-2f0154a25d6e}]
-applets=['c18190f2-57ea-11eb-b44c-2f0154a25d6e', 'bfb1755a-6805-11eb-9a2b-f81654a5b5ae', 'c1867b08-57ea-11eb-b44c-2f0154a25d6e', 'c17af7d8-57ea-11eb-b44c-2f0154a25d6e', 'c169d0de-57ea-11eb-b44c-2f0154a25d6e', 'c17a38c0-57ea-11eb-b44c-2f0154a25d6e', 'c1876f72-57ea-11eb-b44c-2f0154a25d6e', 'c1859cec-57ea-11eb-b44c-2f0154a25d6e', '4c543336-6805-11eb-bcf7-f81654a5b5ae', 'c1604d3e-57ea-11eb-b44c-2f0154a25d6e', '382f5816-67e4-11eb-a340-f81654a5b5ae']
+applets=['c18190f2-57ea-11eb-b44c-2f0154a25d6e', '21245abc-688a-11eb-a148-f81654a5b5ae', 'c1867b08-57ea-11eb-b44c-2f0154a25d6e', 'c17af7d8-57ea-11eb-b44c-2f0154a25d6e', 'f5c34644-6889-11eb-a148-f81654a5b5ae', 'c17a38c0-57ea-11eb-b44c-2f0154a25d6e', 'f40c01ec-6889-11eb-a148-f81654a5b5ae', 'c1859cec-57ea-11eb-b44c-2f0154a25d6e', 'c1876f72-57ea-11eb-b44c-2f0154a25d6e', 'c1604d3e-57ea-11eb-b44c-2f0154a25d6e', '382f5816-67e4-11eb-a340-f81654a5b5ae']
 autohide='none'
 dock-mode=false
 enable-shadow=false
 location='bottom'
-size=39
+size=28
 theme-regions=false
 transparency='none'
 
@@ -121,4 +123,4 @@ caffeine-mode-screen-brightness=75
 center-windows=true
 
 [software-center]
-last-checked=int64 1612565698
+last-checked=int64 1612622944
