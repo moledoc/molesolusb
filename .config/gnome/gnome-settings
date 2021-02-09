@@ -1,3 +1,10 @@
+[boxes]
+first-run=false
+view='icon-view'
+window-maximized=false
+window-position=[285, 242]
+window-size=[890, 677]
+
 [calculator]
 accuracy=9
 angle-units='degrees'
@@ -10,7 +17,7 @@ source-currency=''
 source-units='degree'
 target-currency=''
 target-units='radian'
-window-position=(508, 177)
+window-position=(500, 179)
 word-size=64
 
 [calendar]
