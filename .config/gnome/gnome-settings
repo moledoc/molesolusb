@@ -2,8 +2,8 @@
 first-run=false
 view='icon-view'
 window-maximized=false
-window-position=[285, 242]
-window-size=[890, 677]
+window-position=[37, 17]
+window-size=[1229, 922]
 
 [calculator]
 accuracy=9
@@ -27,7 +27,7 @@ window-position=(0, 0)
 window-size=(1280, 944)
 
 [control-center]
-last-panel='applications'
+last-panel='keyboard'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -76,7 +76,7 @@ secondary-color='#000000000000'
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
 
 [desktop/session]
-idle-delay=uint32 300
+idle-delay=uint32 900
 
 [desktop/wm/keybindings]
 close=['<Super>q']
@@ -186,7 +186,7 @@ night-light-schedule-to=0.0
 night-light-temperature=uint32 2400
 
 [settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/']
 email=['<Super>m']
 home=['<Primary><Super>e']
 next=['AudioNext']
@@ -204,6 +204,11 @@ name='Terminal'
 binding='<Shift><Super>e'
 command='setxkbmap -layout ee'
 name='lang_est'
+
+[settings-daemon/plugins/media-keys/custom-keybindings/custom10]
+binding='<Primary><Alt>s'
+command='systemctl suspend'
+name='suspend'
 
 [settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Shift><Super>u'

@@ -18,7 +18,7 @@ extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/pack
 
 # Download packages.
 packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf"
-additional_pkg="transmission redshift wget tmux eog gnome-mpv texlive pandoc libxtst-devel libpng-devel" #vlc 
+additional_pkg="gnome-boxes transmission redshift wget tmux eog gnome-mpv texlive pandoc libxtst-devel libpng-devel" #vlc 
 
 # eog - eye of gnome
 # dconf-cli to load cinnamon keyboard shortcuts in/out
