@@ -2,8 +2,8 @@
 first-run=false
 view='icon-view'
 window-maximized=false
-window-position=[37, 17]
-window-size=[1229, 922]
+window-position=[72, 96]
+window-size=[1144, 855]
 
 [calculator]
 accuracy=9
@@ -27,7 +27,7 @@ window-position=(0, 0)
 window-size=(1280, 944)
 
 [control-center]
-last-panel='keyboard'
+last-panel='info-overview'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -50,8 +50,8 @@ xkb-options=['lv3:ralt_switch']
 [desktop/interface]
 cursor-theme='breeze_cursors'
 gtk-im-module='ibus'
-gtk-theme='Plata-Noir-Compact'
-icon-theme='Papirus-Dark'
+gtk-theme='Arc-Dark'
+icon-theme='Papirus'
 show-battery-percentage=true
 toolkit-accessibility=false
 
@@ -152,7 +152,7 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(983, 550)
+initial-size=(983, 542)
 maximized=false
 start-with-sidebar=true
 
