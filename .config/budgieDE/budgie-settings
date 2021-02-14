@@ -1,7 +1,7 @@
 [budgie-panel]
 dark-theme=true
 migration-level=1
-panels=['86eb9930-6805-11eb-9a2b-f81654a5b5ae', 'c15f9286-57ea-11eb-b44c-2f0154a25d6e']
+panels=['c15f9286-57ea-11eb-b44c-2f0154a25d6e']
 
 [budgie-panel/applets/{18512966-6807-11eb-ba0b-f81654a5b5ae}]
 alignment='center'
@@ -23,9 +23,9 @@ alignment='end'
 name='Night Light'
 position=0
 
-[budgie-panel/applets/{3aa9977e-6806-11eb-ba0b-f81654a5b5ae}]
+[budgie-panel/applets/{b3941bec-6f0d-11eb-b6be-f81654a5b5ae}]
 alignment='center'
-name='Workspace Switcher'
+name='Icon Task List'
 position=0
 
 [budgie-panel/applets/{c1604d3e-57ea-11eb-b44c-2f0154a25d6e}]
@@ -63,6 +63,11 @@ alignment='end'
 name='Raven Trigger'
 position=5
 
+[budgie-panel/applets/{ce93cc26-6f0d-11eb-b6be-f81654a5b5ae}]
+alignment='center'
+name='Workspace Switcher'
+position=1
+
 [budgie-panel/applets/{f40c01ec-6889-11eb-a148-f81654a5b5ae}]
 alignment='start'
 name='Places'
@@ -72,6 +77,9 @@ position=4
 alignment='start'
 name='Show Desktop Button'
 position=3
+
+[budgie-panel/instance/icon-tasklist/{b3941bec-6f0d-11eb-b6be-f81654a5b5ae}]
+pinned-launchers=['solus-sc.desktop', 'org.gnome.Nautilus.desktop', 'firefox.desktop']
 
 [budgie-panel/instance/places-indicator/{f40c01ec-6889-11eb-a148-f81654a5b5ae}]
 expand-places=true
@@ -83,21 +91,8 @@ size=15
 [budgie-panel/instance/spacer/{293ee5ce-6807-11eb-ba0b-f81654a5b5ae}]
 size=15
 
-[budgie-panel/instance/workspaces/{3aa9977e-6806-11eb-ba0b-f81654a5b5ae}]
-addbutton-visibility='never'
-
-[budgie-panel/panels/{86eb9930-6805-11eb-9a2b-f81654a5b5ae}]
-applets=['3aa9977e-6806-11eb-ba0b-f81654a5b5ae']
-autohide='automatic'
-dock-mode=true
-enable-shadow=false
-location='left'
-size=39
-theme-regions=false
-transparency='always'
-
 [budgie-panel/panels/{c15f9286-57ea-11eb-b44c-2f0154a25d6e}]
-applets=['c18190f2-57ea-11eb-b44c-2f0154a25d6e', '21245abc-688a-11eb-a148-f81654a5b5ae', 'c1867b08-57ea-11eb-b44c-2f0154a25d6e', 'c17af7d8-57ea-11eb-b44c-2f0154a25d6e', 'f5c34644-6889-11eb-a148-f81654a5b5ae', 'c17a38c0-57ea-11eb-b44c-2f0154a25d6e', 'f40c01ec-6889-11eb-a148-f81654a5b5ae', 'c1859cec-57ea-11eb-b44c-2f0154a25d6e', 'c1876f72-57ea-11eb-b44c-2f0154a25d6e', 'c1604d3e-57ea-11eb-b44c-2f0154a25d6e', '382f5816-67e4-11eb-a340-f81654a5b5ae']
+applets=['c18190f2-57ea-11eb-b44c-2f0154a25d6e', '21245abc-688a-11eb-a148-f81654a5b5ae', 'c1867b08-57ea-11eb-b44c-2f0154a25d6e', 'c17af7d8-57ea-11eb-b44c-2f0154a25d6e', 'f5c34644-6889-11eb-a148-f81654a5b5ae', 'c17a38c0-57ea-11eb-b44c-2f0154a25d6e', 'f40c01ec-6889-11eb-a148-f81654a5b5ae', 'c1859cec-57ea-11eb-b44c-2f0154a25d6e', 'c1876f72-57ea-11eb-b44c-2f0154a25d6e', 'b3941bec-6f0d-11eb-b6be-f81654a5b5ae', 'ce93cc26-6f0d-11eb-b6be-f81654a5b5ae', 'c1604d3e-57ea-11eb-b44c-2f0154a25d6e', '382f5816-67e4-11eb-a340-f81654a5b5ae']
 autohide='none'
 dock-mode=false
 enable-shadow=false
@@ -118,4 +113,4 @@ caffeine-mode-screen-brightness=75
 center-windows=true
 
 [software-center]
-last-checked=int64 1613074968
+last-checked=int64 1613340281

@@ -2,8 +2,8 @@
 first-run=false
 view='icon-view'
 window-maximized=false
-window-position=[72, 96]
-window-size=[1144, 855]
+window-position=[226, 52]
+window-size=[995, 713]
 
 [calculator]
 accuracy=9
@@ -27,7 +27,7 @@ window-position=(0, 0)
 window-size=(1280, 944)
 
 [control-center]
-last-panel='info-overview'
+last-panel='background'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -35,7 +35,7 @@ mag-factor=1.0
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-2020-the-mandalorian-yoda-artwork-4k-jp.jpeg'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-126.jpeg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -68,7 +68,7 @@ two-finger-scrolling-enabled=true
 [desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-2020-the-mandalorian-yoda-artwork-4k-jp.jpeg'
+picture-uri='file:///home/utt/.local/share/backgrounds/2021-01-29-09-14-24-126.jpeg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
