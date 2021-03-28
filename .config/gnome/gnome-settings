@@ -22,12 +22,12 @@ word-size=64
 
 [calendar]
 active-view='month'
-window-maximized=true
-window-position=(0, 0)
-window-size=(1280, 944)
+window-maximized=false
+window-position=(900, 147)
+window-size=(800, 600)
 
 [control-center]
-last-panel='background'
+last-panel='keyboard'
 
 [desktop/a11y/magnifier]
 mag-factor=1.0
@@ -59,10 +59,10 @@ toolkit-accessibility=false
 numlock-state=true
 
 [desktop/peripherals/mouse]
-speed=0.44285714285714284
+speed=-0.010676156583629859
 
 [desktop/peripherals/touchpad]
-send-events='enabled'
+send-events='disabled'
 two-finger-scrolling-enabled=true
 
 [desktop/screensaver]
@@ -79,7 +79,6 @@ sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gn
 idle-delay=uint32 900
 
 [desktop/wm/keybindings]
-close=['<Super>q']
 lower=['<Shift><Super>t']
 maximize=@as []
 maximize-horizontally=['<Super>j']
@@ -113,9 +112,24 @@ sidebar=false
 background-color='rgb(0,0,0)'
 use-background-color=true
 
+[evince/default]
+window-ratio=(1.5537861990190152, 1.087989357658685)
+
 [evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
 
 [gedit/plugins]
 active-plugins=['modelines', 'sort', 'docinfo', 'spell', 'filebrowser']
@@ -152,12 +166,20 @@ search-filter-time-type='last_modified'
 search-view='list-view'
 
 [nautilus/window-state]
-initial-size=(983, 542)
+initial-size=(983, 565)
 maximized=false
 start-with-sidebar=true
 
 [nm-applet]
 disable-connected-notifications=true
+
+[nm-applet/eap/2ee6ec8e-6dd7-47e0-9901-d5b7d904804e]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[nm-applet/eap/36813baf-aa9c-4eae-af8d-617c5ea1a569]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [nm-applet/eap/9a4d30ce-e118-4180-a020-ca3fccb3a113]
 ignore-ca-cert=false
@@ -175,6 +197,10 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 ignore-phase2-ca-cert=false
 
+[nm-applet/eap/f5630b3d-550d-413a-b82b-dae54db6e27e]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
 [photos]
 window-maximized=true
 
@@ -183,7 +209,7 @@ night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=0.0
 night-light-schedule-to=0.0
-night-light-temperature=uint32 2400
+night-light-temperature=uint32 2700
 
 [settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom10/']
