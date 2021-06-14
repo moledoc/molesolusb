@@ -44,7 +44,7 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepassxc htop fd-find ripgrep zathura-poppler xclip dconf-cli dash alacritty"
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepassxc htop fd-find ripgrep zathura-poppler xclip dconf-cli dash alacritty exa"
 additional_pkg="gnome-boxes transmission redshift wget curl tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 
 # dash = minimal posix complient shell

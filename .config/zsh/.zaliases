@@ -14,6 +14,8 @@ alias b="cd .."
 
 ## Colored ls in one column
 alias ls="ls -1F  --color=\"always\""
+## exa
+alias exa="exa -alF --group-directories-first --color=\"always\" --color-scale --icons"
 
 ## Show all dir content
 alias la="ls -a"
