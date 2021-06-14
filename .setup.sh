@@ -9,24 +9,32 @@ case "$1" in
     installCmd="pacman -S"
     pkg_manager="pacman"
     extraCmds=""
+    echo "Setup for Arch will start in 10sec (Ctrl+c to cancel)"
+    echo "THIS IS DEPR AT THE MOMENT"
+    exit
     ;;
   solus)
     updateCmd="sudo eopkg upgrade -y"
     installCmd="eopkg install -y"
     pkg_manager="eopkg"
     extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
+    echo "Setup for Solus will start in 10sec (Ctrl+c to cancel)"
     ;;
-  ubuntu/debian)
+  ubuntu|debian)
     updateCmd="sudo apt update;sudo apt upgrade"
     installCmd="apt install"
     pkg_manager="apt"
     extraCmds=""
+    echo "Setup for Ubuntu(/Debian) will start in 10sec (Ctrl+c to cancel)"
     ;;
   *)
     echo "Selected distro is not supported"
     exit
     ;;
 esac
+
+# Give user 10sec to cancel setup
+sleep 10
 
 # Set up root passwd
 echo "Set root passwd"
