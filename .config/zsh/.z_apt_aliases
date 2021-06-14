@@ -5,22 +5,22 @@
 ### even though there is the man pages.
 
 ## Run update and upgrade.
-alias update='sudo apt update;sudo apt upgrade'
+alias update='${elevate} apt update;${elevate} apt upgrade'
 
 ## Install a program
-alias install="sudo apt install"
+alias install="${elevate} apt install"
 ## Install a .deb package
-alias ideb="sudo dpkg -i"
+alias ideb="${elevate} dpkg -i"
 
 ## Uninstall a program
-alias uninstall="sudo apt remove"
+alias uninstall="${elevate} apt remove"
 ## remove leftover files
-alias purge="sudo apt purge"
+alias purge="${elevate} apt purge"
 ## remove autoinstalled packages
-alias autoremove="sudo apt autoremove"
+alias autoremove="${elevate} apt autoremove"
 
 ## satisfy dependencies
-# sudo apt satisfy
+# ${elevate} apt satisfy
 
 ## look what packages you have for <program> 
 ## or info about particular program

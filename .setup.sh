@@ -2,6 +2,32 @@
 
 # README: setup user system, after git pull.
 
+# set update, install, package manager etc variables
+case $1 in
+  arch)
+    updateCmd="sudo pacman --color=always -Syu"
+    installCmd="pacman -S"
+    pkg_manager="pacman"
+    extraCmds=""
+    ;;
+  solus)
+    updateCmd="sudo eopkg upgrade -y"
+    installCmd="eopkg install -y"
+    pkg_manager="eopkg"
+    extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
+    ;;
+  ubuntu/debian)
+    updateCmd="sudo apt update;sudo apt upgrade"
+    installCmd="apt install"
+    pkg_manager="apt"
+    extraCmds=""
+    ;;
+  *)
+    exit
+    ;;
+esac
+
+
 # Set up root passwd
 echo "Set root passwd"
 sudo passwd
@@ -9,30 +35,26 @@ sudo passwd
 user=$(who)
 user${user%% *}
 
-# update repository
-# CHANGE ACCORDING TO PACKAGE MANAGER!!!
-updateCmd="sudo eopkg upgrade -y"
-installCmd="eopkg install -y"
-pkg_manager="eopkg"
-extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
-
 # Download packages.
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf tmux xclip git dconf"
-additional_pkg="gnome-boxes transmission redshift wget tmux eog gnome-mpv texlive pandoc libxtst-devel libpng-devel" #vlc 
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf xclip dconf dash"
+additional_pkg="gnome-boxes transmission redshift wget tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 
+# dash = minimal posix complient shell
+# gnome-boxes = VM
+# transmission = torrent
 # eog - eye of gnome
-# dconf-cli to load cinnamon keyboard shortcuts in/out
+# dconf-cli to load gnome/cinnamon/budgie settings
 # wmctrl to list window processes
 # libxtst-devel libpng-devel -- for some R packages
-programming_pkg="rstudio vscode"
+#programming_pkg="rstudio vscode"
 
 if [ ! -z "$installCmd" ]
 then
   echo "Update package manager"
   $updateCmd
   $extraCmds
-	echo "Installing packages: $packages $programming_pkg #$additional_pkg"
-	sudo $installCmd $packages $programming_pkg #$additional_pkg 
+	echo "Installing packages: $packages " # $programming_pkg #$additional_pkg
+	sudo $installCmd $packages #$programming_pkg #$additional_pkg 
   echo "Packages installed"
 else
 	echo "Missing argument, exiting script!"
@@ -43,15 +65,14 @@ fi
 setxkbmap -option caps:swapescape
 echo "CapsLock and escape swapped"
 
-# change shell to zsh
-# echo "What user's shell do we change?"
+# change shell to dash
 # read user
-new_shell="zsh"
+new_shell="dash"
 echo "Changing shell to $new_shell"
 chsh -s /bin/$new_shell
 echo "Shell changed to $new_shell"
 
-# set up git
+# set up minimal git
 echo "Setting up git for user"
 echo "Insert git --global user.name: " 
 read varUsername
@@ -96,15 +117,6 @@ nvim +PlugInstall +qa
 echo "Add gruvbox colorscheme to vim colors"
 sudo cp $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
 
-## Setup bazecor, the DygmaRaise keyboard tool.
-#echo "Install Bazecor for Dygma keyboard"
-#mkdir $HOME/.AppImages
-#echo "Directory $HOME/.AppImages made"
-#wget --output-file=$HOME/.AppImages/Bazecor.AppImage https://github.com/Dygmalab/Bazecor/releases/download/bazecor-0.2.6/Bazecor-0.2.6.AppImage
-#chmod +x $HOME/.AppImages/Bazecor.AppImage
-#rm Bazecor-0.2.6.AppImage
-#echo "Bazecor installed"
-
 # pull additional repos, if ssh key is set.
 echo "Is ssh key added to github? (if added, type 'yes'; if not, but this is wanted, then do it now and then type 'yes')" 
 read hasSSHKey
@@ -129,16 +141,4 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
 ## load DE settings
 $new_shell $HOME/.scripts/load_settings.zsh
 
-## load firefox settings
-$new_shell $HOME/.scripts/firefox-bu.zsh
-
-## get and configure doas
-git clone https://github.com/slicer69/doas $HOME/Documents/doas
-cd $HOME/Documents/doas
-make
-sudo make install clean
-sudo mkdir /usr/local/etc
-echo "permit $user nopass" | sudo tee /usr/local/etc/doas.conf
-
-#echo "Visit github repo and add the ssh public key to allowed ssh keys (public key should be copied to the clipboard)!"
 echo "Setup DONE!"

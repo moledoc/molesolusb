@@ -4,17 +4,17 @@
 ### Some aliases are just for documenting some commands,
 ### even though there is the man pages.
 
-# DOAS
+# ${elevate}
 
 ## Run update and upgrade.
-alias update='doas -- pacman --color=always -Syu'
-#alias update_core='doas -- pacman --color=always -Syyu'
+alias update='${elevate} -- pacman --color=always -Syu'
+#alias update_core='${elevate} -- pacman --color=always -Syyu'
 
 ## Uninstall a program
-alias uninstall="doas -- pacman --color=always -Rsu"
+alias uninstall="${elevate} -- pacman --color=always -Rsu"
 
 ## Install a program
-alias install="doas -- pacman --color=always -S"
+alias install="${elevate} -- pacman --color=always -S"
 
 ## look what packages you have for <program> 
 ## or info about particular program
@@ -24,22 +24,22 @@ alias info="pacman --color=always -Qs"
 # alias einfo="pacman --color=always -Qsi"
 alias einfo="pacman --color=always -Qi"
 alias orphan="pacman --color=always -Qdt"
-alias rm_orphans="doas -- pacman --color=always -Rsu $(echo $(pacman -Qqdt))"
+alias rm_orphans="${elevate} -- pacman --color=always -Rsu $(echo $(pacman -Qqdt))"
 
 ## count packages
 alias count_pkg="pacman --color=always -Q | wc -l"
 
-## SUDO
+## ${elevate}
 #
 ### Run update and upgrade.
-#alias update='sudo pacman --color=always -Syu'
-##alias update_core='sudo pacman --color=always -Syyu'
+#alias update='${elevate} pacman --color=always -Syu'
+##alias update_core='${elevate} pacman --color=always -Syyu'
 #
 ### Uninstall a program
-#alias uninstall="sudo pacman --color=always -Rsu"
+#alias uninstall="${elevate} pacman --color=always -Rsu"
 #
 ### Install a program
-#alias install="sudo pacman --color=always -S"
+#alias install="${elevate} pacman --color=always -S"
 #
 ### look what packages you have for <program> 
 ### or info about particular program
@@ -49,7 +49,7 @@ alias count_pkg="pacman --color=always -Q | wc -l"
 ## alias einfo="pacman --color=always -Qsi"
 #alias einfo="pacman --color=always -Qi"
 #alias orphan="pacman --color=always -Qdt"
-#alias rm_orphans="sudo pacman --color=always -Rsu $(echo $(pacman -Qqdt))"
+#alias rm_orphans="${elevate} pacman --color=always -Rsu $(echo $(pacman -Qqdt))"
 #
 ### count packages
 #alias count_pkg="pacman --color=always -Q | wc -l"

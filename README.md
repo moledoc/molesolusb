@@ -12,27 +12,37 @@ lsblk # show available devices
 dd if=<path to iso> of=/dev/sdX status="progress"
 ```
 
-* Run the installer. If it's commandline install, then use documentation or there are some documentation in older mole<distro> repositories.
+* Run the installer. If it's commandline install, then use documentation or there are some documentation in older depreciated_builds/mole<distro> repositories.
 
 ## After installation
 
 * Boot into system
-* Change sudo/doas permissions for user. As root
+* Change sudo/doas permissions for user (need to be root) (doas is preferred).
+
+**doas:**
+
+```
+# Allow <user> to use doas without password (author's preference)
+echo "permit <user> nopass" > /usr/local/etc/doas.conf
+
+## Allow user to use doas (asks password every time) # check doas manual
+echo "permit <user> as root" > /usr/local/etc/doas.conf
+```
+
+**sudo:**
 
 ```sh
-EDITOR=vi;visudo # for sudo
-# comment in line
-# %wheel ALL=(ALL) NOPASSWD: ALL
-# %sudo ALL=(ALL) NOPASSWD: ALL
-echo "permit <user> nopass" > /usr/local/etc/doas.conf # for doas
+sudo visudo # for sudo
+```
 
-# The above is the authors preference.
-# If it is too unsecure for some, use
- 
-visudo # for sudo
-# comment in line
-# %wheel ALL=(ALL) ALL
-echo "permit <user> as root" > /usr/local/etc/doas.conf # for doas (check doas manual for this option)
+Add (preferred) lines
+```
+# Allow wheel group users to use sudo (asks password every time)
+%wheel ALL=(ALL) ALL
+
+# Allows sudo and wheel group users to use sudo (does not asks password)
+%wheel ALL=(ALL) NOPASSWD: ALL
+%sudo ALL=(ALL) NOPASSWD: ALL
 ```
 
 or as user, one can do for doas
@@ -59,7 +69,7 @@ sudo apt install git # Debian(/Ubuntu) based
 sudo eopkg install git # Solus 
 ```
 
-* Go to $HOME/Documents/ and clone molecurrent repository.
+* Go to $HOME/Documents/ (if doesn't exist, make directory) and clone molecurrent repository.
 
 ```sh
 cd $HOME/Documents
@@ -69,15 +79,14 @@ git clone https://github.com/moledoc/molecurrent.git
 * Run the setup script.
 
 	* includes downloading some programs;
-	* changing user shell (to do it manually, check the script);
-	* **CURRENTLY SET FOR SOLUS!!!**
+	* **depr:** changing user shell (to do it manually, check the script);
 
 ```sh
 cd molecurrent
-sh .setup.sh
+sh .setup.sh ([debian,ubuntu],arch,solus)
 ```
 
-* check with package manager is used and make symbolic link to correct aliases file. For example
+* **depr:** (done in setup script) check with package manager is used and make symbolic link to correct aliases file. For example
 
 ```sh
 ln -s $HOME/.config/zsh/.z_apt_aliases    $HOME/.config/zsh/.z_pm_aliases # Debian based
@@ -92,8 +101,8 @@ ln -s $HOME/.config/zsh/.z_eopkg_aliases  $HOME/.config/zsh/.z_pm_aliases # Solu
 This subsection describes authors preferences in programs.
 Also presents a list of most commonly used programs, fonts etc.
 
-* doas over sudo, but if there is no doas option sudo works fine. Also, for doas and sudo both I use nopass option (using doas/sudo doesn\'t require password). Just my preference.
-* program: default terminal(gnome-terminal probably) (+ xterm just in case, if wanted)
+* doas over sudo, but if there is no doas option, sudo works fine. Also, for doas and sudo both, I use nopass option (using doas/sudo doesn\'t require password). Just my preference.
+* program: default terminal (gnome-terminal probably) (+ xterm just in case, if wanted)
 * program: drop down terminal: guake 
 * program: zsh (zsh-syntax-highlighting)
 * program: neovim(nvim)/vim 
@@ -110,21 +119,22 @@ Also presents a list of most commonly used programs, fonts etc.
   * fzf_open script solution
 * program: fzf; also use as opener/launcher -- see .scripts/open.zsh
 * program: keepass (password manager)
-* program: redshift (nightlight, if doesn't exist)
-* program: sxhkd or WM/DE default keybindings editor.
-* program: htop
+* program: redshift (if nightlight doesn't exist)
+* program: sxhkd or WM/DE default keybindings editor for keybindings.
+* program: htop for system monitoring
 * program: fd(-find) (replacement for find; faster)
 * program: ripgrep (replacement for grep; faster)
 * program: (any gui filemanager is fine (nautilus,nemo,thunar,pcmanfm,dolphin etc))
 * program: nitrogen (if there is no wallpaper handling in the DE or WM)
-* program: zathura (zathura-pdf-mupdf/-poppler; for viewing pdf\'s)
-* program: (gnome-)mpv (video and audio files); vlc for backup, explore mpd for music(?)
-* program: IDE/Editor for development (corresponding to the language, eg RStudio,VSCode,Intellij etc)
+* program: zathura (zathura-pdf-mupdf/-poppler; for viewing pdf\'s); for backup mupdf or gnomes document viewer are good as well
+* program: (gnome-)mpv (video and audio files); vlc for backup, explore mpd for music(?); Rhythmbox
+* program: IDE/Editor for development (corresponding to the language, eg RStudio, VSCode, Intellij etc)
 * program: tmux (multiplexer) -- need to learn to use
 
 * RE-EVALUATING THIS -- might stick with default fonts (unless they have some deficiency -- font: fonts-hermit (might have different package name)
 * colorscheme: gruvbox colorscheme, slightly changed (I use gruvbox yellow and black as text and foreground color)
-* options: swap caps and esc (not needed if programmable keyboard), setxkbmap -option caps:swapescape 
+* options: swap caps and esc (not needed if programmable keyboard), otherwise can use 
+> setxkbmap -option caps:swapescape 
 * options: have keybindings for different language, eg setxkbmap -layout us
 
 ## Main keybindings

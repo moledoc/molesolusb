@@ -9,7 +9,7 @@ $SHELL $HOME/.scripts/gen_readme.zsh
 repo=$HOME/Documents/molecurrent
 
 # save terminal, DE etc settings
-save_settings.zsh
+$SHELL $HOME/.scripts/save_settings.zsh
 
 cp -RL $HOME/.config/zsh $repo/.config
 cp -RL $HOME/.config/cinnamonDE $repo/.config

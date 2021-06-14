@@ -5,30 +5,30 @@
 ### even though there is the man pages.
 
 ## Run update and upgrade.
-alias update='sudo eopkg upgrade'
+alias update='${elevate} eopkg upgrade'
 
 ## Install a program
-alias install="sudo eopkg install"
-alias reinstall="sudo eopkg install --reinstall"
-alias yinstall="sudo eopkg install --yes-all"
+alias install="${elevate} eopkg install"
+alias reinstall="${elevate} eopkg install --reinstall"
+alias yinstall="${elevate} eopkg install --yes-all"
 
 ## Uninstall + packages w/ dependencies
-alias uninstall="sudo eopkg autoremove"
+alias uninstall="${elevate} eopkg autoremove"
 ## Uninstall a program
-alias remove="sudo eopkg remove"
+alias remove="${elevate} eopkg remove"
 ## Uninstall + tagged conf files 
-alias purge="sudo eopkg purge"
+alias purge="${elevate} eopkg purge"
 ## Remove orphaned pkgs
-alias orphaned="sudo eopkg remove-orphans"
+alias orphaned="${elevate} eopkg remove-orphans"
 
 ## dry run (for all commands -n or --dry-run)
 alias dry="--dry-run"
 
 ## add-repo
-alias add-repo="sudo eopkg add-repo"
+alias add-repo="${elevate} eopkg add-repo"
 
 ## check pkg
-alias check="sudo eopkg check"
+alias check="${elevate} eopkg check"
 
 ## eopkg command help
 alias help="eopkg help"
