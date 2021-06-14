@@ -79,7 +79,7 @@ git clone https://github.com/moledoc/molecurrent.git
 * Run the setup script.
 
 	* includes downloading some programs;
-	* **depr:** changing user shell (to do it manually, check the script);
+	* changing user shell (to dash) (to do it manually, check the script);
 
 ```sh
 cd molecurrent
