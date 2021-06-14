@@ -3,7 +3,7 @@
 # README: setup user system, after git pull.
 
 # set update, install, package manager etc variables
-case $1 in
+case "$1" in
   arch)
     updateCmd="sudo pacman --color=always -Syu"
     installCmd="pacman -S"
@@ -23,10 +23,10 @@ case $1 in
     extraCmds=""
     ;;
   *)
+    echo "Selected distro is not supported"
     exit
     ;;
 esac
-
 
 # Set up root passwd
 echo "Set root passwd"
