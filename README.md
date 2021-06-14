@@ -102,7 +102,7 @@ This subsection describes authors preferences in programs.
 Also presents a list of most commonly used programs, fonts etc.
 
 * doas over sudo, but if there is no doas option, sudo works fine. Also, for doas and sudo both, I use nopass option (using doas/sudo doesn\'t require password). Just my preference.
-* program: default terminal (gnome-terminal probably) (+ xterm just in case, if wanted)
+* program: TODO: alacritty; default terminal (gnome-terminal probably) (+ xterm just in case, if wanted)
 * program: drop down terminal: guake 
 * program: zsh (zsh-syntax-highlighting)
 * program: neovim(nvim)/vim 
