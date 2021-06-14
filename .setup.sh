@@ -21,7 +21,7 @@ case "$1" in
     echo "Setup for Solus will start in 10sec (Ctrl+c to cancel)"
     ;;
   ubuntu|debian)
-    updateCmd="sudo apt update;sudo apt upgrade"
+    updateCmd="sudo apt update; sudo apt upgrade"
     installCmd="apt install"
     pkg_manager="apt"
     extraCmds=""
@@ -41,11 +41,11 @@ echo "Set root passwd"
 sudo passwd
 
 user=$(who)
-user${user%% *}
+user=${user%% *}
 
-# Download packages.
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepass htop fd ripgrep zathura-mupdf xclip dconf dash"
-additional_pkg="gnome-boxes transmission redshift wget tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
+# Download packages (set for ubuntu atm).
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf keepassxc htop fd-find ripgrep zathura-poppler xclip dconf-cli dash alacritty"
+additional_pkg="gnome-boxes transmission redshift wget curl tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 
 # dash = minimal posix complient shell
 # gnome-boxes = VM
@@ -150,3 +150,4 @@ sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
 $new_shell $HOME/.scripts/load_settings.zsh
 
 echo "Setup DONE!"
+echo "github ssh key is in the clipboard, you have to (currently) manually add it to github)"
