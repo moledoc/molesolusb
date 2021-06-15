@@ -43,6 +43,7 @@ case "$1" in
     ;;
   *)
     echo "Selected distro is not supported"
+    echo "run again as: ./.setup.sh (ubuntu|debian,solus,(depreciated currently)arch)"
     exit
     ;;
 esac
