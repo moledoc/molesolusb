@@ -153,7 +153,7 @@ sudo passwd
 
 # set up sudo and doas
 notice "Make doas config"
-echo "permit ${user} nopass" > /usr/local/etc/doas.conf
+echo "permit ${user} nopass" | sudo tee /usr/local/etc/doas.conf
 notice "Update sudo config"
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.tmp
 sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers
