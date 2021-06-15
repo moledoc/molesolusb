@@ -153,11 +153,13 @@ sudo passwd
 
 # set up sudo and doas
 notice "Make doas config"
-# echo "permit ${user} nopass" | sudo tee /usr/local/etc/doas.conf
+echo "permit nopass ${user}" | sudo tee /usr/local/etc/doas.conf
 echo "permit nopass ${user}" | sudo tee /etc/doas.conf
 notice "Update sudo config"
+sudo cat /etc/sudoers | sudo tee /etc/sudoers.bu
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.tmp
-sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers
+sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers.tmp2
+sudo cat /etc/sudoers.tmp2 | sudo tee /etc/sudoers
 # sudo rm -fv /etc/sudoers.tmp
 notice "doas and sudo configured"
 
