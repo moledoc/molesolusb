@@ -114,11 +114,10 @@ notice "Change git remote from https to ssh"
 git remote -v set-url origin git@github.com:moledoc/molecurrent.git  
 
 notice "Copy repository to $HOME"
-notice "IGNORE THESE cp ERRORS"
 # Copy contents of the repository to the right places.
-cp -vr .scripts .config $HOME > /dev/null
+cp -vr .scripts .config $HOME 
 # cp .setup.sh .x* .X* .z* $HOME
-cp -v * .* $HOME
+cp -v README.md .vimrc .xinitrc .Xresources .zprofile .zshrc $HOME
 notice "Repository contents copied to $HOME"
 
 # add symlink to package manager aliases
