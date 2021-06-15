@@ -67,10 +67,6 @@ additional_pkg="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pan
 # libxtst-devel libpng-devel -- for some R packages
 #programming_pkg="rstudio vscode"
 
-# Set up root passwd
-notice "Set root passwd"
-sudo passwd
-
 if [ ! -z "$installCmd" ]
 then
   notice "Update package manager"
@@ -149,6 +145,10 @@ sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
 $new_shell $HOME/.scripts/load_settings.sh
+
+# Set up root passwd
+notice "Set root passwd"
+sudo passwd
 
 notice "Copy github_key.pub to clipboard"
 xclip -verbose -selection clipboard < $HOME/.ssh/github_key.pub
