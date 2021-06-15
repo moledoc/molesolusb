@@ -17,16 +17,16 @@ dd if=<path to iso> of=/dev/sdX status="progress"
 ## After installation
 
 * Boot into system
-* Change sudo/doas permissions for user (need to be root) (doas is preferred).
+* Change sudo/doas permissions for user (need to be **root**) (doas is preferred).
 
 **doas:**
 
 ```
 # Allow <user> to use doas without password (author's preference)
-echo "permit <user> nopass" > /usr/local/etc/doas.conf
+echo "permit nopass <user>" > /usr/local/etc/doas.conf
 
-## Allow user to use doas (asks password every time) # check doas manual
-echo "permit <user> as root" > /usr/local/etc/doas.conf
+## Allow user to use doas (asks password every time)
+echo "permit <user>" > /usr/local/etc/doas.conf
 ```
 
 **sudo:**
@@ -36,6 +36,7 @@ sudo visudo # for sudo
 ```
 
 Add (preferred) lines
+
 ```
 # Allow wheel group users to use sudo (asks password every time)
 %wheel ALL=(ALL) ALL
@@ -45,7 +46,7 @@ Add (preferred) lines
 %sudo ALL=(ALL) NOPASSWD: ALL
 ```
 
-or as user, one can do for doas
+or **as user**, one can do for doas
 
 ```sh
 # example
