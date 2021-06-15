@@ -57,7 +57,8 @@ user=${user%% *}
 
 # Download packages (set for ubuntu atm).
 packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli dash alacritty exa"
-additional_pkg="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
+additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
+forFun="cowsay"
 
 # dash = minimal posix complient shell
 # gnome-boxes = VM
@@ -74,9 +75,9 @@ then
   eval $updateCmd
   eval $extraCmds
   notice "Dry run package installation"
-	$installCmd $dryRun $packages #$programming_pkg #$additional_pkg 
-	notice "Installing packages: $packages " # $programming_pkg #$additional_pkg
-	sudo $installCmd $packages #$programming_pkg #$additional_pkg 
+	$installCmd $dryRun $packages $forFun #$programming_pkg #$additionalPkgs 
+	notice "Installing packages: $packages $forFun" # $programming_pkg #$additionalPkgs
+	sudo $installCmd $packages $forFun #$programming_pkg #$additionalPkgs 
   notice "Packages installed"
 else
 	notice "Missing argument, exiting script!"
@@ -154,8 +155,7 @@ notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
 notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
-echo "\n\n====================================================================\n\n"
-notice "Setup DONE!"
+cowsay -f bud-frogs "SETUP DONE!"
 
 
 
