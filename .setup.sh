@@ -151,7 +151,7 @@ notice "Set root passwd"
 sudo passwd
 
 notice "Copy github_key.pub to clipboard"
-xclip -verbose -selection clipboard < $HOME/.ssh/github_key.pub
+xclip -selection clipboard < $HOME/.ssh/github_key.pub
 notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
 echo "\n\n====================================================================\n\n"
