@@ -56,7 +56,7 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli dash alacritty exa"
+packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli dash exa" #alacritty 
 additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 forFun="cowsay"
 
@@ -151,11 +151,18 @@ $new_shell $HOME/.scripts/load_settings.sh
 notice "Set root passwd"
 sudo passwd
 
+# set up sudo and doas
+notice "Make doas config"
+echo "permit ${user} nopass" > /usr/local/etc/doas.conf
+notice "Update sudo config"
+echo "%wheel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.tmp
+sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers
+sudo rm -fv /etc/sudoers.tmp
+notice "doas and sudo configured"
+
 notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
 notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
 cowsay -f bud-frogs "SETUP DONE!"
-
-
 
