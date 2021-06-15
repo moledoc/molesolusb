@@ -20,6 +20,7 @@ case "$1" in
     installCmd="pacman -S"
     pkg_manager="pacman"
     extraCmds=""
+    dryRun=""
     echo "Setup for Arch will start in ${sleeping}sec (Ctrl+c to cancel)"
     echo "THIS IS DEPR AT THE MOMENT"
     exit
@@ -29,6 +30,7 @@ case "$1" in
     installCmd="eopkg install -y"
     pkg_manager="eopkg"
     extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
+    dryRun="--dry-run"
     echo "Setup for Solus will start in ${sleeping}sec (Ctrl+c to cancel)"
     ;;
   ubuntu|debian)
@@ -36,6 +38,7 @@ case "$1" in
     installCmd="apt install"
     pkg_manager="apt"
     extraCmds=""
+    dryRun="--dry-run"
     echo "Setup for Ubuntu(/Debian) will start in ${sleeping}sec (Ctrl+c to cancel)"
     ;;
   *)
@@ -73,7 +76,9 @@ then
   notice "Update package manager"
   eval $updateCmd
   eval $extraCmds
-	echo "Installing packages: $packages " # $programming_pkg #$additional_pkg
+  notice "Dry run package installation"
+	$installCmd $dryRun $packages #$programming_pkg #$additional_pkg 
+	notice "Installing packages: $packages " # $programming_pkg #$additional_pkg
 	sudo $installCmd $packages #$programming_pkg #$additional_pkg 
   notice "Packages installed"
 else
@@ -105,28 +110,29 @@ notice "Minimal git config set up"
 
 # create ssh key for github
 notice "Create ssh key for accessing git."
-mkdir $HOME/.ssh
+if [ ! -d "$HOME/.ssh" ]; then mkdir -v $HOME/.ssh; fi
 ssh-keygen -t rsa -b 4096 -C "$varEmail" -f $HOME/.ssh/github_key -P ""
 # change git remote from https to ssh
 notice "Change git remote from https to ssh"
-git remote set-url origin git@github.com:moledoc/molecurrent.git  
+git remote -v set-url origin git@github.com:moledoc/molecurrent.git  
 
 notice "Copy repository to $HOME"
 notice "IGNORE THESE cp ERRORS"
 # Copy contents of the repository to the right places.
-cp -r .scripts .config $HOME > /dev/null
+cp -vr .scripts .config $HOME > /dev/null
 # cp .setup.sh .x* .X* .z* $HOME
-cp * .* $HOME
+cp -v * .* $HOME
 notice "Repository contents copied to $HOME"
 
 # add symlink to package manager aliases
-rm -f $HOME/.config/zsh/.z_pm_aliases
-ln -s $HOME/.config/zsh/.z_${pkg_manager}_aliases $HOME/.config/zsh/.z_pm_aliases
+notice "Create symlink to correct package manager aliases"
+rm -vf $HOME/.config/zsh/.z_pm_aliases
+ln -vs $HOME/.config/zsh/.z_${pkg_manager}_aliases $HOME/.config/zsh/.z_pm_aliases
 notice "Symlink to package manager aliases created"
 
 # install VimPlug (nvim/vim pluggin manager)
 notice "Install VimPlug to $HOME/.config/nvim/plugged"
-mkdir -p $HOME/.config/nvim/plugged
+mkdir -vp $HOME/.config/nvim/plugged
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs\
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
@@ -135,17 +141,17 @@ nvim +PlugInstall +qa
 
 # add gruvbox for vim as well
 notice "Add gruvbox colorscheme to vim colors"
-sudo cp $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
+sudo cp -v $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
 
 ## make guake dropdown terminal autostarting
 notice "Make guake dropdown terminal autostarting"
-sudo cp /usr/share/applications/guake.desktop /etc/xdg/autostart
+sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
-$new_shell $HOME/.scripts/load_settings.zsh
+$new_shell $HOME/.scripts/load_settings.sh
 
 notice "Copy github_key.pub to clipboard"
-xclip -selection clipboard < $HOME/.ssh/github_key.pub
+xclip -verbose -selection clipboard < $HOME/.ssh/github_key.pub
 notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
 echo "\n\n====================================================================\n\n"
