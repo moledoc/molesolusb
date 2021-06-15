@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Backup/restore firefox settings. 
 

@@ -8,6 +8,7 @@ export TERMINAL=gnome-terminal
 export BROWSER="firefox"
 export HISTCONTROL=ignoreboth
 
+export GIT_SSH='ssh -i $HOME/.ssh/github_key'
 export elevate=doas
 
 ### Set some defaults for opening programs.

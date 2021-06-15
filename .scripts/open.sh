@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Script to open or focus given file with defined default opener, depending on the file extension.
 

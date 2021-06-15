@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Generate .script/ README. Generates description only for those scripts, that have README defined.
 

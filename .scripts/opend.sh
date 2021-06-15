@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Use fzf to go-to selected directory.
 

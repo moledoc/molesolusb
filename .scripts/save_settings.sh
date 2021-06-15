@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: save terminal, DE etc settings
 

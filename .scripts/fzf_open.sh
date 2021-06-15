@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Run launcher using fzf, similar to dmenu and rofi.
 

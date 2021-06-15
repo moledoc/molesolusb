@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: Script to comfortably increase/decrease/reset redshift
 

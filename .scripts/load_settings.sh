@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # README: load terminal, DE etc settings
 
