@@ -17,8 +17,10 @@ then
 elif [ "$DE" = 'budgie-desktop' ]
 then
   dconf dump /com/solus-project/ > $HOME/.config/budgieDE/budgie-settings
+  dconf dump /org/gnome/ > $HOME/.config/gnome/gnome-settings
 elif [ "$DE" = 'cinnamon' ]
 then
   dconf dump /org/cinnamon/ > $HOME/.config/cinnamonDE/cinnamon-settings
+  dconf dump /org/gnome/ > $HOME/.config/gnome/gnome-settings
 fi
 
