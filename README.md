@@ -17,12 +17,12 @@ dd if=<path to iso> of=/dev/sdX status="progress"
 ## After installation
 
 * Boot into system
-* Change sudo/doas permissions for user (need to be **root**) (doas is preferred).
+* Change sudo/doas (doas is preferred) permissions for user (need to be **root**/use elevated privileges).
 
 **doas:**
 
 ```
-# Allow <user> to use doas without password (author's preference)
+# Allow <user> to use doas without password
 echo "permit nopass <user>" > /usr/local/etc/doas.conf
 
 ## Allow user to use doas (asks password every time)
@@ -58,15 +58,15 @@ echo "permit <user> nopass" | sudo tee /usr/local/etc/doas.conf
 
 ```sh
 sudo pacman -Syu # Arch based
-sudo apt update; sudo apt upgrade # Debian(/Ubuntu) based
-sudo eopkg upgrade # Solus (might take some time)
+sudo apt update; sudo apt upgrade # Ubuntu
+sudo eopkg upgrade # Solus
 ```
 
 * If git is not on the system, install it.
 
 ```sh
 sudo pacman -S git # Arch based
-sudo apt install git # Debian(/Ubuntu) based
+sudo apt install git # Ubuntu based
 sudo eopkg install git # Solus 
 ```
 
@@ -81,13 +81,14 @@ git clone https://github.com/moledoc/molecurrent.git
 
 	* includes downloading some programs;
 	* changing user shell (to dash) (to do it manually, check the script);
+	* loading DE settings
 
 ```sh
-cd molecurrent
-sh .setup.sh ([debian,ubuntu],arch,solus)
+cd $HOME/Documents/molecurrent
+sh .setup.sh [ubuntu,solus,(currently depreciated) arch]
 ```
 
-* **depr:** (done in setup script) check with package manager is used and make symbolic link to correct aliases file. For example
+* **depr (done in setup script):** check with package manager is used and make symbolic link to correct aliases file. For example
 
 ```sh
 ln -s $HOME/.config/zsh/.z_apt_aliases    $HOME/.config/zsh/.z_pm_aliases # Debian based
@@ -95,19 +96,20 @@ ln -s $HOME/.config/zsh/.z_pacman_aliases $HOME/.config/zsh/.z_pm_aliases # Arch
 ln -s $HOME/.config/zsh/.z_eopkg_aliases  $HOME/.config/zsh/.z_pm_aliases # Solus
 ```
 
-* The general setup should be done. Some tweaking might be necessary, but it is not covered in this readme.
+* The general setup should be done.
+Some tweaking might be necessary, but it is not covered in this readme.
 
 ## molecurrent setup
 
-This subsection describes authors preferences in programs.
-Also presents a list of most commonly used programs, fonts etc.
+This subsection describes authors preferences in programs:
 
-* doas over sudo, but if there is no doas option, sudo works fine. Also, for doas and sudo both, I use nopass option (using doas/sudo doesn\'t require password). Just my preference.
-* program: TODO: alacritty; default terminal (gnome-terminal probably) (+ xterm just in case, if wanted)
-* program: drop down terminal: guake 
-* program: zsh (zsh-syntax-highlighting)
-* program: neovim(nvim)/vim 
-* program: firefox
+* **elevate privileges**: doas over sudo, but if there is no doas option, sudo works fine. Also, for doas and sudo both, I prefer to use nopass option (using doas/sudo doesn\'t require password).
+* **shell**: dash as default/for scripting and zsh (zsh-syntax-highlighting) in terminal
+* **terminal**: default terminal (gnome-terminal probably) + xterm for backup; **TODO:** look into alacritty; 
+* **terminal**: drop down terminal: guake 
+* **terminal editor**: neovim(nvim)/vim 
+* **IDE(-like)/editor for development**: RStudio(/VScode), but also Intellij etc for corresponding language
+* **browser**: firefox
 	
 	* vim bindings pluggin
 	* duckduckgo pluggin
@@ -115,28 +117,38 @@ Also presents a list of most commonly used programs, fonts etc.
 	* privacybadger plugin
 	* change privacy settings
 
-* program: run launcher that comes with DE; if no runlauncher some good choices
-  * dmenu
-  * fzf_open script solution
-* program: fzf; also use as opener/launcher -- see .scripts/open.zsh
-* program: keepass (password manager)
-* program: redshift (if nightlight doesn't exist)
-* program: sxhkd or WM/DE default keybindings editor for keybindings.
-* program: htop for system monitoring
-* program: fd(-find) (replacement for find; faster)
-* program: ripgrep (replacement for grep; faster)
-* program: (any gui filemanager is fine (nautilus,nemo,thunar,pcmanfm,dolphin etc))
-* program: nitrogen (if there is no wallpaper handling in the DE or WM)
-* program: zathura (zathura-pdf-mupdf/-poppler; for viewing pdf\'s); for backup mupdf or gnomes document viewer are good as well
-* program: (gnome-)mpv (video and audio files); vlc for backup, explore mpd for music(?); Rhythmbox
-* program: IDE/Editor for development (corresponding to the language, eg RStudio, VSCode, Intellij etc)
-* program: tmux (multiplexer) -- need to learn to use
+* **password manager**: keepassxc
+* **system monitoring (terminal)**: htop for system monitoring
+* **file manager**: any GUI filemanager is fine (nautilus,nemo,thunar,pcmanfm,dolphin etc); for terminal file manager I've used nnn
+* **run launcher**: run launcher that comes with DE; if no runlauncher some good choices
 
-* RE-EVALUATING THIS -- might stick with default fonts (unless they have some deficiency -- font: fonts-hermit (might have different package name)
-* colorscheme: gruvbox colorscheme, slightly changed (I use gruvbox yellow and black as text and foreground color)
-* options: swap caps and esc (not needed if programmable keyboard), otherwise can use 
-> setxkbmap -option caps:swapescape 
-* options: have keybindings for different language, eg setxkbmap -layout us
+  * dmenu(or rofi, which I've not used)
+  * script using fzf (eg fzf_open script solution)
+
+* **Night light**: redshift (if nightlight doesn't exist)
+* **font**: TODO: in re-evaluation, until decision using the default font
+* **colorscheme**: TODO: in re-evaluation, until decision using previously set themes (almost gruvbox in vim, terminal, guake, RStudio)
+* **theme**: TODO: 
+* **document/image viewer**: the default one is fine, but for scripting and more minimal viewer: zathura-pdf-mupdf/-poppler
+* **media**: VLC (video), Rythmbox (audio), mpv/mpd (terminal video/audio), maybe even gnome-mpv(video/audio)
+* **torrents**: transmission
+* **multiplexer**: tmux **TODO:** need to learn to use
+* **options**: swap caps and esc (not needed for programmable keyboard),gui option or run: setxkbmap -option caps:swapescape 
+* **options**: have keybindings for different language, set in settings; in terminal run eg: setxkbmap -layout us
+
+Replacements:
+
+* fd(-find) (replacement for find; faster)
+* ripgrep (replacement for grep; faster)
+* exa (replacement for ls; nicer)
+* nitrogen (if there is no wallpaper handling in the DE or WM)
+
+other useful/good programs:
+
+* wget: pull stuff from web
+* curl: pull stuff from web; REST API
+* fzf: fuzzy finder
+* sxhkd: simple way to manage keybindings
 
 ## Main keybindings
 
@@ -148,9 +160,19 @@ Ground rules:
 
 ## Notes
 
-### Cinnamon DE
+### Settings import/export
 
-* To import keyboard shortcuts, make sure dconf-cli package is installed.
+* for Gnome, Cinnamon and Budgie, dconf-cli package is necessary.
+* Gnome DE (or anything that uses Gnome): to import/export all Gnome settings, run:
+
+```sh
+#import
+dconf load /org/gnome/ < $HOME/.config/gnome/gnome-settings
+#export
+dconf dump /org/gnome/ > $HOME/.config/gnome/gnome-settings
+```
+
+* Cinnamon DE: to import/export keyboard shortcuts/themes, run:
 
 ```sh
 # export
@@ -161,7 +183,7 @@ dconf load /org/cinnamon/desktop/keybindings/ < $HOME/.config/cinnamonDE/wm-sett
 dconf load /org/cinnamon/theme/ < $HOME/.config/cinnamonDE/theme-settings.conf
 ```
 
-### Budgie DE
+* Budgie DE: to import/export budgie-panel/-raven/-wm, run:
 
 ```sh
 # export 
@@ -169,12 +191,12 @@ dconf dump /com/solus-project/budgie-panel/ > $HOME/.config/budgieDE/panel-setti
 dconf dump /com/solus-project/budgie-raven/ > $HOME/.config/budgieDE/raven-settings
 dconf dump /com/solus-project/budgie-wm/ > $HOME/.config/budgieDE/wm-settings
 # import 
-dconf load /com/solus-project/budgie-panel < $HOME/.config/budgieDE/panel-settings
+dconf load /com/solus-project/budgie-panel < $HOME/.config/budgieDE/panel-settings 
 dconf load /com/solus-project/budgie-raven < $HOME/.config/budgieDE/raven-settings
 dconf load /com/solus-project/budgie-wm < $HOME/.config/budgieDE/wm-settings
 ```
 
-### gnome-terminal
+* gnome-terminal: to import/export only gnome terminal settings, run (analogical for other settings):
 
 ```sh
 # export 
@@ -183,7 +205,7 @@ dconf dump /org/gnome/terminal/ > $HOME/.config/gnome-terminal/gnome-terminal-se
 dconf load /org/gnome/terminal < $HOME/.config/gnome-terminal/gnome-terminal-settings
 ```
 
-### guake terminal
+* guake terminal
 
 ```sh
 # export
@@ -192,10 +214,10 @@ guake --save-preferences $HOME/.config/guake/.guakeconf &
 guake --restore-preferences $HOME/.config/guake/.guakeconf &
 ```
 
-### RStudio
+* RStudio
 
-* Get gruvbox theme from https://tmtheme-editor.herokuapp.com/#!/editor/theme/Gruvbox (should also be in repo)
-* Under 'Tools > Global Options' change keybindings to vim, font to hermit and add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into right place, so no manual intervention needed).
+	* Get gruvbox theme from https://tmtheme-editor.herokuapp.com/#!/editor/theme/Gruvbox (should also be in repo)
+	* Under 'Tools > Global Options' change keybindings to vim, add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into right place, so no manual intervention needed).
 
 ```r
 install.packages('xml2')

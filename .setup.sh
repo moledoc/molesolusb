@@ -9,7 +9,6 @@ notice()
 {
   echo "--------------------------------------"
   echo $1
-  echo "--------------------------------------"
 }
 
 # set update, install, package manager etc variables
@@ -43,7 +42,7 @@ case "$1" in
     ;;
   *)
     echo "Selected distro is not supported"
-    echo "run again as: ./.setup.sh (ubuntu|debian,solus,(depreciated currently)arch)"
+    echo "run again as: ./.setup.sh (ubuntu,solus,(currently depreciated) arch)"
     exit
     ;;
 esac
@@ -56,18 +55,20 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli dash exa" #alacritty 
+packages="doas xterm dash zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep exa zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool" #alacritty 
 additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 forFun="cowsay"
 
 # dash = minimal posix complient shell
 # gnome-boxes = VM
 # transmission = torrent
-# eog - eye of gnome
+# eog - eye of gnome (image viewer)
 # dconf-cli to load gnome/cinnamon/budgie settings
 # wmctrl to list window processes
 # libxtst-devel libpng-devel -- for some R packages
+# gnome-tweak-tool -- extra tweaks in gnome DE
 #programming_pkg="rstudio vscode"
+
 
 if [ ! -z "$installCmd" ]
 then
@@ -145,23 +146,27 @@ notice "Make guake dropdown terminal autostarting"
 sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
-$new_shell $HOME/.scripts/load_settings.sh
+#notice "Load DE settings"
+#$new_shell $HOME/.scripts/load_settings.sh
+#notice "DE settings loaded"
 
 # Set up root passwd
-notice "Set root passwd"
+notice "Set root password"
 sudo passwd
+notice "Root password changed"
 
 # set up sudo and doas
-notice "Make doas config"
+notice "Make doas config (both in /etc and /user/local/etc)"
 echo "permit nopass ${user}" | sudo tee /usr/local/etc/doas.conf
 echo "permit nopass ${user}" | sudo tee /etc/doas.conf
+notice "doas configured"
 notice "Update sudo config"
 sudo cat /etc/sudoers | sudo tee /etc/sudoers.bu
 echo "%wheel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.tmp
 sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers.tmp2
 sudo cat /etc/sudoers.tmp2 | sudo tee /etc/sudoers
 # sudo rm -fv /etc/sudoers.tmp
-notice "doas and sudo configured"
+notice "sudo configured"
 
 notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
