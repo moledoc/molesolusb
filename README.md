@@ -128,7 +128,7 @@ This subsection describes authors preferences in programs:
 * **Night light**: redshift (if nightlight doesn't exist)
 * **font**: TODO: in re-evaluation, until decision using the default font
 * **colorscheme**: TODO: in re-evaluation, until decision using previously set themes (almost gruvbox in vim, terminal, guake, RStudio)
-* **theme**: TODO: 
+* **theme**: TODO: exact theme and also light vs dark theme (currently on the dark side)
 * **document/image viewer**: the default one is fine, but for scripting and more minimal viewer: zathura-pdf-mupdf/-poppler
 * **media**: VLC (video), Rythmbox (audio), mpv/mpd (terminal video/audio), maybe even gnome-mpv(video/audio)
 * **torrents**: transmission
