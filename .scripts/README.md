@@ -8,9 +8,9 @@ Generated with readmeGen script
 * **open.sh**: Script to open or focus given file with defined default opener, depending on the file extension.
 * **opend.sh**: Use fzf to go-to selected directory.
 * **load_settings.sh**: load terminal, DE etc settings
-* **gen_readme.sh**: Generate .script/ README. Generates description only for those scripts, that have README defined.
-* **firefox-bu.sh**: Backup/restore firefox settings. 
 * **fzf_open.sh**: Run launcher using fzf, similar to dmenu and rofi.
+* **firefox-bu.sh**: Backup/restore firefox settings. 
+* **gen_readme.sh**: Generate .script/ README. Generates description only for those scripts, that have README defined.
 
 # Author
 
