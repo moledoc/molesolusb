@@ -171,10 +171,10 @@ alias weather="curl wttr.in"
 #	Scripts
 
 # update git repository directory
-alias update_repo='update_repo.zsh'
+alias update_repo='update_repo.sh'
 #
 # update build
 alias update_build='cp $HOME/Documents/molecurrent/* $HOME/Documents/molecurrent/.* $HOME;cp -r $HOME/Documents/molecurrent/* $HOME'
 
 ## open directoryu/go-to dir w/ fzf
-alias od='source opend.zsh'
+alias od='source opend.sh'

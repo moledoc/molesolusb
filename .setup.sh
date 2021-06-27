@@ -92,7 +92,7 @@ notice "CapsLock and escape swapped"
 
 # change shell to dash
 # read user
-new_shell="dash"
+new_shell="zsh"
 notice "Changing shell to $new_shell"
 chsh -s /bin/$new_shell
 notice "Shell changed to $new_shell"
