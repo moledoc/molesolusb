@@ -3,9 +3,10 @@ let mapleader = ";"
 let maplocalleader = "\\"
 
 "colorscheme
-autocmd vimenter * colorscheme gruvbox
-set background=dark
-set termguicolors
+set background=light
+" autocmd vimenter * colorscheme gruvbox
+autocmd vimenter * colorscheme solarized
+" set termguicolors
 
 " encoding
 set encoding=utf-8

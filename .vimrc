@@ -3,9 +3,10 @@ let mapleader = ";"
 let maplocalleader = "\\"
 
 "colorscheme
-colorscheme gruvbox
-set background=dark
-set termguicolors
+" colorscheme gruvbox
+set background=light
+colorscheme solarized
+" set termguicolors
 
 " encoding
 set encoding=utf-8

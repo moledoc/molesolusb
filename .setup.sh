@@ -137,9 +137,11 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 notice "Run PlugInstall, to install defined pluggins to neovim"
 nvim +PlugInstall +qa
 
-# add gruvbox for vim as well
+# add gruvbox and solarized for vim (and nvim) as well
 notice "Add gruvbox colorscheme to vim colors"
 sudo cp -v $HOME/.config/nvim/plugged/gruvbox/colors/gruvbox.vim /usr/share/vim/vim8*/colors
+sudo cp -v $HOME/.config/solarized.vim /usr/share/vim/vim8*/colors
+sudo cp -v $HOME/.config/solarized.vim /usr/share/nvim/runtime/colors
 
 ## make guake dropdown terminal autostarting
 notice "Make guake dropdown terminal autostarting"
@@ -170,8 +172,11 @@ notice "sudo configured"
 
 # set up Yaru
 notice "Add Yaru themes, icons and sounds to the system"
-unzip $HOME/Documents/molecurrent/.config/appearance.zip
-cp $HOME/Documents/molecurrent/.config/appearance/* /usr/share/
+unzip $HOME/Documents/molecurrent/.config/appearance.zip -d $HOME/Documents/molecurrent/.config/
+sudo cp -rv $HOME/Documents/molecurrent/.config/appearance/* /usr/share/
+# cp -rv $HOME/Documents/molecurrent/.config/appearance/sounds /usr/share/sounds
+# cp -rv $HOME/Documents/molecurrent/.config/appearance/icons /usr/share/icons
+# cp -rv $HOME/Documents/molecurrent/.config/appearance/themes /usr/share/themes
 notice "Yaru added"
 
 notice "Copy github_key.pub to clipboard"
