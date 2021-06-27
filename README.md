@@ -108,6 +108,7 @@ This subsection describes authors preferences in programs:
 * **terminal**: default terminal (gnome-terminal probably) + xterm for backup; **TODO:** look into alacritty; 
 * **terminal**: drop down terminal: guake 
 * **terminal editor**: neovim(nvim)/vim 
+* **version control**: git
 * **IDE(-like)/editor for development**: RStudio(/VScode), but also Intellij etc for corresponding language
 * **browser**: firefox
 	
@@ -125,11 +126,12 @@ This subsection describes authors preferences in programs:
   * dmenu(or rofi, which I've not used)
   * script using fzf (eg fzf_open script solution)
 
-* **Night light**: redshift (if nightlight doesn't exist)
+* **night light**: redshift (if nightlight doesn't exist)
+* **theme**:  currently Yaru-light; TODO: light vs dark theme (currently switched to the light side)
+* **colorscheme**:TODO: in re-evaluation, until decision using previously set themes (almost gruvbox in vim, terminal, guake, RStudio)
 * **font**: TODO: in re-evaluation, until decision using the default font
-* **colorscheme**: TODO: in re-evaluation, until decision using previously set themes (almost gruvbox in vim, terminal, guake, RStudio)
-* **theme**: TODO: exact theme and also light vs dark theme (currently on the dark side)
-* **document/image viewer**: the default one is fine, but for scripting and more minimal viewer: zathura-pdf-mupdf/-poppler
+* **document**: the default one is fine, but for scripting and more minimal viewer: zathura-pdf-mupdf/-poppler
+* **image viewer**: the default is fine (in ubuntu its eog (eye of gnome))
 * **media**: VLC (video), Rythmbox (audio), mpv/mpd (terminal video/audio), maybe even gnome-mpv(video/audio)
 * **torrents**: transmission
 * **multiplexer**: tmux **TODO:** need to learn to use

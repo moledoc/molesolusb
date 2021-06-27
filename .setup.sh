@@ -7,7 +7,7 @@ set -e
 
 notice()
 {
-  echo "--------------------------------------"
+  echo "\n--------------------------------------"
   echo $1
 }
 
@@ -55,7 +55,7 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="doas xterm dash zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep exa zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool" #alacritty 
+packages="doas xterm dash zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep exa zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool zip unzip" #alacritty 
 additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
 forFun="cowsay"
 
@@ -146,9 +146,9 @@ notice "Make guake dropdown terminal autostarting"
 sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
-#notice "Load DE settings"
-#$new_shell $HOME/.scripts/load_settings.sh
-#notice "DE settings loaded"
+notice "Load DE settings"
+$new_shell $HOME/.scripts/load_settings.sh
+notice "DE settings loaded"
 
 # Set up root passwd
 notice "Set root password"
@@ -167,6 +167,12 @@ sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers.tmp2
 sudo cat /etc/sudoers.tmp2 | sudo tee /etc/sudoers
 # sudo rm -fv /etc/sudoers.tmp
 notice "sudo configured"
+
+# set up Yaru
+notice "Add Yaru themes, icons and sounds to the system"
+unzip $HOME/Documents/molecurrent/.config/appearance.zip
+cp $HOME/Documents/molecurrent/.config/appearance/* /usr/share/
+notice "Yaru added"
 
 notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
