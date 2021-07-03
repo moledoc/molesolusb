@@ -4,6 +4,20 @@ last-panel='display'
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
 
+[desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gucharmap.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Screenshot.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'simple-scan.desktop', 'vinagre.desktop', 'yelp.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
@@ -40,10 +54,15 @@ application-id='gnome-control-center.desktop'
 [desktop/notifications/application/guake]
 application-id='guake.desktop'
 
+[desktop/notifications/application/snap-store-ubuntu-software]
+application-id='snap-store_ubuntu-software.desktop'
+
 [desktop/peripherals/touchpad]
+natural-scroll=true
 two-finger-scrolling-enabled=true
 
 [desktop/privacy]
+disable-microphone=false
 report-technical-problems=true
 
 [desktop/screensaver]
@@ -128,6 +147,10 @@ favorite-apps=['org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Nauti
 [shell/extensions/dash-to-dock]
 dock-position='LEFT'
 preferred-monitor=0
+
+[software]
+check-timestamp=int64 1625322819
+online-updates-timestamp=int64 1625322821
 
 [system/location]
 enabled=false

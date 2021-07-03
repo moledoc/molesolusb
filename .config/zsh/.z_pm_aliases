@@ -1,0 +1,34 @@
+
+# 	###################
+# 	package manager
+### Some aliases are just for documenting some commands,
+### even though there is the man pages.
+
+## Run update and upgrade.
+alias update='${elevate} apt update;${elevate} apt upgrade'
+
+## Install a program
+alias install="${elevate} apt install"
+## Install a .deb package
+alias debinstall="${elevate} dpkg -i"
+
+## Uninstall a program
+alias uninstall="${elevate} apt remove"
+## remove leftover files
+alias purge="${elevate} apt purge"
+## remove autoinstalled packages
+alias autoremove="${elevate} apt autoremove"
+
+## satisfy dependencies
+# ${elevate} apt satisfy
+
+## look what packages you have for <program> 
+## or info about particular program
+alias search="apt search"
+alias show="apt show"
+alias list="apt list"
+alias installed="apt list --installed"
+alias upgradable="apt list --upgradeable"
+
+## count packages
+alias count_pkg="apt list --installed | wc -l"

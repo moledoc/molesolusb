@@ -3,8 +3,8 @@
 # README: save terminal, DE etc settings
 
 
-# save guake settings
-guake --save-preferences $HOME/.config/guake/.guakeconf &
+# # save guake settings
+# guake --save-preferences $HOME/.config/guake/.guakeconf &
 
 # get DE name
 DE=$(echo $DESKTOP_SESSION)

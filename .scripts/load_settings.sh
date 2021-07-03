@@ -2,8 +2,8 @@
 
 # README: load terminal, DE etc settings
 
-# load guake settings
-guake --restore-preferences $HOME/.config/guake/.guakeconf &
+# # load guake settings
+# guake --restore-preferences $HOME/.config/guake/.guakeconf &
 
 DE=$(echo $DESKTOP_SESSION)
 
