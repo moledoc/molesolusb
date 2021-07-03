@@ -5,7 +5,7 @@
 ### even though there is the man pages.
 
 ## Run update and upgrade.
-alias update='${elevate} apt update;${elevate} apt upgrade'
+alias update="${elevate} apt update;${elevate} apt upgrade"
 
 ## Install a program
 alias install="${elevate} apt install"

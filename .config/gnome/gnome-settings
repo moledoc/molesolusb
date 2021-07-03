@@ -1,8 +1,11 @@
 [control-center]
-last-panel='display'
+last-panel='background'
 
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
+
+[desktop/a11y/magnifier]
+mag-factor=6.0
 
 [desktop/app-folders]
 folder-children=['Utilities', 'YaST']
@@ -21,9 +24,9 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png'
-primary-color='#333333'
-secondary-color='#333333'
+picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
+primary-color='#2c001e'
+secondary-color='#2c001e'
 
 [desktop/calendar]
 show-weekdate=true
@@ -31,7 +34,7 @@ show-weekdate=true
 [desktop/input-sources]
 mru-sources=[('xkb', 'us'), ('xkb', 'ee')]
 sources=[('xkb', 'us'), ('xkb', 'ee')]
-xkb-options=@as []
+xkb-options=['caps:escape']
 
 [desktop/interface]
 clock-show-seconds=false
@@ -45,14 +48,23 @@ show-battery-percentage=true
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['gnome-control-center', 'guake']
+application-children=['gnome-control-center', 'guake', 'google-chrome', 'snap-store-ubuntu-software', 'org-gnome-nautilus', 'appimagelaunchersettings']
 show-in-lock-screen=false
+
+[desktop/notifications/application/appimagelaunchersettings]
+application-id='appimagelaunchersettings.desktop'
 
 [desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
 
+[desktop/notifications/application/google-chrome]
+application-id='google-chrome.desktop'
+
 [desktop/notifications/application/guake]
 application-id='guake.desktop'
+
+[desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
 
 [desktop/notifications/application/snap-store-ubuntu-software]
 application-id='snap-store_ubuntu-software.desktop'
@@ -69,9 +81,9 @@ report-technical-problems=true
 color-shading-type='solid'
 lock-delay=uint32 0
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/ubuntu-default-greyscale-wallpaper.png'
-primary-color='#333333'
-secondary-color='#333333'
+picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
+primary-color='#2c001e'
+secondary-color='#2c001e'
 
 [desktop/session]
 idle-delay=uint32 300
@@ -105,7 +117,7 @@ size=(900, 700)
 state=87168
 
 [gnome-system-monitor]
-current-tab='processes'
+current-tab='disks'
 maximized=false
 network-total-in-bits=false
 show-dependencies=false
@@ -119,6 +131,7 @@ col-6-width=0
 [nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
+search-view='list-view'
 
 [nautilus/window-state]
 initial-size=(890, 550)
@@ -129,7 +142,11 @@ night-light-enabled=true
 night-light-schedule-automatic=false
 night-light-schedule-from=0.0
 night-light-schedule-to=0.0
-night-light-temperature=uint32 2600
+night-light-temperature=uint32 2315
+
+[settings-daemon/plugins/media-keys]
+home=['<Super>e']
+www=['<Super>b']
 
 [settings-daemon/plugins/power]
 sleep-inactive-ac-timeout=3600
@@ -139,10 +156,12 @@ sleep-inactive-ac-type='nothing'
 hinting='slight'
 
 [shell]
+app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'org.gnome.Extensions.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'firefox.desktop': <{'position': <3>}>, 'htop.desktop': <{'position': <4>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <5>}>, 'gnome-language-selector.desktop': <{'position': <6>}>, 'software-properties-livepatch.desktop': <{'position': <7>}>, 'nvim.desktop': <{'position': <8>}>, 'org.gnome.PowerStats.desktop': <{'position': <9>}>, 'gnome-control-center.desktop': <{'position': <10>}>, 'software-properties-gtk.desktop': <{'position': <11>}>, 'update-manager.desktop': <{'position': <12>}>, 'gnome-session-properties.desktop': <{'position': <13>}>, 'org.gnome.gedit.desktop': <{'position': <14>}>, 'snap-store_ubuntu-software.desktop': <{'position': <15>}>, 'Utilities': <{'position': <16>}>, 'debian-uxterm.desktop': <{'position': <17>}>, 'vim.desktop': <{'position': <18>}>, 'vlc.desktop': <{'position': <19>}>, 'debian-xterm.desktop': <{'position': <20>}>, 'org.pwmt.zathura.desktop': <{'position': <21>}>, 'code.desktop': <{'position': <22>}>, 'discord.desktop': <{'position': <23>}>}, {'google-chrome.desktop': <{'position': <0>}>}]
+command-history=['Bazecor']
 disable-user-extensions=false
 disabled-extensions=['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com']
 enabled-extensions=['ding@rastersoft.com']
-favorite-apps=['org.gnome.Terminal.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor.desktop', 'gnome-control-center.desktop', 'org.gnome.tweaks.desktop']
+favorite-apps=['org.gnome.Terminal.desktop', 'google-chrome.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'gnome-system-monitor.desktop', 'gnome-control-center.desktop', 'org.gnome.tweaks.desktop', 'snap-store_ubuntu-software.desktop', 'org.keepassxc.KeePassXC.desktop', 'code.desktop', 'discord.desktop']
 
 [shell/extensions/dash-to-dock]
 dock-position='LEFT'
@@ -150,7 +169,7 @@ preferred-monitor=0
 
 [software]
 check-timestamp=int64 1625322819
-online-updates-timestamp=int64 1625322821
+online-updates-timestamp=int64 1625327724
 
 [system/location]
 enabled=false

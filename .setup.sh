@@ -178,9 +178,10 @@ notice "GitHub ssh key is in the clipboard, you have to manually add it to githu
 
 cowsay -f bud-frogs "SETUP DONE!"
 
-notice "Opening firefox for chrome, vscode, discord install; github to add ssh key; bazecor for DygmaRaise software"
+notice "Opening firefox for chrome, vscode, discord install; github to add ssh key; bazecor for DygmaRaise software; appimage launcher for integrated appimage launching"
 firefox "chrome.com"
 firefox "https://code.visualstudio.com/"
 firefox "https://discord.com/"
 firefox "github.com/login"
 firefox "https://dygma.com/pages/bazecor"
+firefox "https://github.com/TheAssassin/AppImageLauncher/releases"
