@@ -57,6 +57,8 @@ forFun="cowsay"
 # libxtst-devel libpng-devel -- for some R packages
 # gnome-tweak-tool -- extra tweaks in gnome DE
 # programmingPkg= vscode  # rstudio 
+# comms = discord
+
 # ecosystem = google -- testing
 
 
@@ -134,8 +136,8 @@ sudo cp -v $HOME/.config/solarized.vim /usr/share/vim/vim8*/colors
 sudo cp -v $HOME/.config/solarized.vim /usr/share/nvim/runtime/colors
 
 ## make guake dropdown terminal autostarting
-notice "Make guake dropdown terminal autostarting"
-sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
+#notice "Make guake dropdown terminal autostarting"
+#sudo cp -v /usr/share/applications/guake.desktop /etc/xdg/autostart
 
 ## load DE settings
 notice "Load DE settings"
@@ -175,7 +177,9 @@ notice "GitHub ssh key is in the clipboard, you have to manually add it to githu
 
 cowsay -f bud-frogs "SETUP DONE!"
 
-notice "Opening firefox for chrome and vscode install and github to add ssh key"
+notice "Opening firefox for chrome, vscode, discord install; github to add ssh key; bazecor for DygmaRaise software"
 firefox "chrome.com"
 firefox "https://code.visualstudio.com/"
+firefox "https://discord.com/"
 firefox "github.com/login"
+firefox "https://dygma.com/pages/bazecor"
