@@ -169,6 +169,7 @@ sudo cp -rv $HOME/Documents/molecurrent/.config/appearance/* /usr/share/
 # cp -rv $HOME/Documents/molecurrent/.config/appearance/sounds /usr/share/sounds
 # cp -rv $HOME/Documents/molecurrent/.config/appearance/icons /usr/share/icons
 # cp -rv $HOME/Documents/molecurrent/.config/appearance/themes /usr/share/themes
+rm -r $HOME/Documents/molecurrent/.config/appearance
 notice "Yaru added"
 
 notice "Copy github_key.pub to clipboard"
