@@ -10,7 +10,7 @@ alias update='${elevate} apt update;${elevate} apt upgrade'
 ## Install a program
 alias install="${elevate} apt install"
 ## Install a .deb package
-alias ideb="${elevate} dpkg -i"
+alias debinstall="${elevate} dpkg -i"
 
 ## Uninstall a program
 alias uninstall="${elevate} apt remove"

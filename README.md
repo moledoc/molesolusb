@@ -104,12 +104,13 @@ Some tweaking might be necessary, but it is not covered in this readme.
 This subsection describes authors preferences in programs:
 
 * **elevate privileges**: doas over sudo, but if there is no doas option, sudo works fine. Also, for doas and sudo both, I prefer to use nopass option (using doas/sudo doesn\'t require password).
-* **shell**: dash as default/for scripting and zsh (zsh-syntax-highlighting) in terminal
-* **terminal**: default terminal (gnome-terminal probably) + xterm for backup; **TODO:** look into alacritty; 
-* **terminal**: drop down terminal: guake 
+* **shell**: zsh (zsh-syntax-highlighting)
+* **terminal**: default terminal (gnome-terminal) + xterm for backup;
+* **depr: terminal**: drop down terminal: guake 
 * **terminal editor**: neovim(nvim)/vim 
 * **version control**: git
 * **IDE(-like)/editor for development**: RStudio(/VScode), but also Intellij etc for corresponding language
+* **ecosystem**: **TODO**: testing google ecosystem, so I might change from firefox to google
 * **browser**: firefox
 	
 	* vim bindings pluggin
@@ -128,7 +129,7 @@ This subsection describes authors preferences in programs:
 
 * **night light**: redshift (if nightlight doesn't exist)
 * **theme**:  currently Yaru-light; TODO: light vs dark theme (currently switched to the light side)
-* **colorscheme**:TODO: in re-evaluation, until decision using previously set themes (almost gruvbox in vim, terminal, guake, RStudio)
+* **colorscheme**:TODO: in re-evaluation, until decision using previously set themes (switched to solarized light)
 * **font**: TODO: in re-evaluation, until decision using the default font
 * **document**: the default one is fine, but for scripting and more minimal viewer: zathura-pdf-mupdf/-poppler
 * **image viewer**: the default is fine (in ubuntu its eog (eye of gnome))
@@ -154,7 +155,7 @@ other useful/good programs:
 
 ## Main keybindings
 
-Ground rules:
+Ground rules (might be subject to change):
 
 * Window managing is centered around **super** key
 * nvim/vim managing is centered around **alt** key
@@ -218,8 +219,8 @@ guake --restore-preferences $HOME/.config/guake/.guakeconf &
 
 * RStudio
 
-	* Get gruvbox theme from https://tmtheme-editor.herokuapp.com/#!/editor/theme/Gruvbox (should also be in repo)
-	* Under 'Tools > Global Options' change keybindings to vim, add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into right place, so no manual intervention needed).
+	* **depr (but for info will keep)**: Get gruvbox theme from https://tmtheme-editor.herokuapp.com/#!/editor/theme/Gruvbox (should also be in repo)
+	* **depr (but for info will keep)**: Under 'Tools > Global Options' change keybindings to vim, add gruvbox theme. On Debian/Ubuntu based distribution, package libxml2-dev is needed. Also install 'xml2' in RStudio (will put the necessary package into right place, so no manual intervention needed).
 
 ```r
 install.packages('xml2')
@@ -229,7 +230,7 @@ install.packages('xml2')
 ## TODO
 
 * improve this README
-* make build more general
+* make build more stable (eg focused on specific build/distro etc)
 
 ## Author
 

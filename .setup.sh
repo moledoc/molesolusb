@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# README: setup user system, after git pull.
+# README: setup my (ubuntu) system, after git pull or downloading the repo.
 
 # should exit script, when it fails
 set -e
@@ -12,27 +12,9 @@ notice()
 }
 
 # set update, install, package manager etc variables
-sleeping=5
+sleeping=2
 case "$1" in
-  arch)
-    updateCmd="sudo pacman --color=always -Syu"
-    installCmd="pacman -S"
-    pkg_manager="pacman"
-    extraCmds=""
-    dryRun=""
-    echo "Setup for Arch will start in ${sleeping}sec (Ctrl+c to cancel)"
-    echo "THIS IS DEPR AT THE MOMENT"
-    exit
-    ;;
-  solus)
-    updateCmd="sudo eopkg upgrade -y"
-    installCmd="eopkg install -y"
-    pkg_manager="eopkg"
-    extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
-    dryRun="--dry-run"
-    echo "Setup for Solus will start in ${sleeping}sec (Ctrl+c to cancel)"
-    ;;
-  ubuntu|debian)
+  ubuntu)
     updateCmd="sudo apt update; sudo apt upgrade"
     installCmd="apt install"
     pkg_manager="apt"
@@ -40,9 +22,17 @@ case "$1" in
     dryRun="--dry-run"
     echo "Setup for Ubuntu(/Debian) will start in ${sleeping}sec (Ctrl+c to cancel)"
     ;;
+  # solus)
+  #   updateCmd="sudo eopkg upgrade -y"
+  #   installCmd="eopkg install -y"
+  #   pkg_manager="eopkg"
+  #   extraCmds="sudo eopkg install -c system.devel" # https://getsol.us/articles/package-management/basics/en/#base-development-tools
+  #   dryRun="--dry-run"
+  #   echo "Setup for Solus will start in ${sleeping}sec (Ctrl+c to cancel)"
+  #   ;;
   *)
     echo "Selected distro is not supported"
-    echo "run again as: ./.setup.sh (ubuntu,solus,(currently depreciated) arch)"
+    echo "run again as: ./.setup.sh ubuntu"
     exit
     ;;
 esac
@@ -55,19 +45,19 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="doas xterm dash zsh zsh-syntax-highlighting guake neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep exa zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool zip unzip" #alacritty 
-additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" #vlc  libxtst-devel libpng-devel
+packages="doas xterm zsh zsh-syntax-highlighting neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep exa zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool zip unzip vlc" # guake 
+additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" # libxtst-devel libpng-devel
 forFun="cowsay"
 
-# dash = minimal posix complient shell
 # gnome-boxes = VM
 # transmission = torrent
 # eog - eye of gnome (image viewer)
-# dconf-cli to load gnome/cinnamon/budgie settings
+# dconf-cli to load gnome settings
 # wmctrl to list window processes
 # libxtst-devel libpng-devel -- for some R packages
 # gnome-tweak-tool -- extra tweaks in gnome DE
-#programming_pkg="rstudio vscode"
+# programmingPkg= vscode  # rstudio 
+# ecosystem = google -- testing
 
 
 if [ ! -z "$installCmd" ]
@@ -76,9 +66,9 @@ then
   eval $updateCmd
   eval $extraCmds
   notice "Dry run package installation"
-	$installCmd $dryRun $packages $forFun #$programming_pkg #$additionalPkgs 
-	notice "Installing packages: $packages $forFun" # $programming_pkg #$additionalPkgs
-	sudo $installCmd $packages $forFun #$programming_pkg #$additionalPkgs 
+	$installCmd $dryRun $packages $forFun #$programmingPkg #$additionalPkgs 
+	notice "Installing packages: $packages $forFun" # $programmingPkg #$additionalPkgs
+	sudo $installCmd $packages $forFun #$programmingPkg #$additionalPkgs 
   notice "Packages installed"
 else
 	notice "Missing argument, exiting script!"
@@ -185,3 +175,7 @@ notice "GitHub ssh key is in the clipboard, you have to manually add it to githu
 
 cowsay -f bud-frogs "SETUP DONE!"
 
+notice "Opening firefox for chrome and vscode install and github to add ssh key"
+firefox "chrome.com"
+firefox "https://code.visualstudio.com/"
+firefox "github.com/login"
