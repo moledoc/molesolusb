@@ -25,5 +25,6 @@ cp -RLv $HOME/.scripts $repo/
 cp -v $HOME/.vimrc $HOME/.xinitrc $HOME/.Xresources $HOME/.zprofile $HOME/.zshrc $HOME/README.md $repo
 cp -v $HOME/.config/solarized.vim ${repo}/.config
 cp -v $HOME/.config/nvim/init.vim ${repo}/.config/nvim
+cp -v $HOME/.config/wallpaper.jpg ${repo}/.config
 # $HOME/.profile 
 

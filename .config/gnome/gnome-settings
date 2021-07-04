@@ -24,9 +24,9 @@ translate=true
 [desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
-primary-color='#2c001e'
-secondary-color='#2c001e'
+picture-uri='file:///home/utt/.config/wallpaper.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/calendar]
 show-weekdate=true
@@ -81,9 +81,9 @@ report-technical-problems=true
 color-shading-type='solid'
 lock-delay=uint32 0
 picture-options='zoom'
-picture-uri='file:///usr/share/backgrounds/warty-final-ubuntu.png'
-primary-color='#2c001e'
-secondary-color='#2c001e'
+picture-uri='file:///home/utt/.config/wallpaper.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
 
 [desktop/session]
 idle-delay=uint32 300
@@ -128,6 +128,9 @@ window-state=(1048, 587, 26, 23)
 col-6-visible=true
 col-6-width=0
 
+[mutter]
+center-new-windows=true
+
 [nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
@@ -157,7 +160,7 @@ hinting='slight'
 
 [shell]
 app-picker-layout=[{'software-properties-drivers.desktop': <{'position': <0>}>, 'org.gnome.Extensions.desktop': <{'position': <1>}>, 'org.gnome.Nautilus.desktop': <{'position': <2>}>, 'firefox.desktop': <{'position': <3>}>, 'htop.desktop': <{'position': <4>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <5>}>, 'gnome-language-selector.desktop': <{'position': <6>}>, 'software-properties-livepatch.desktop': <{'position': <7>}>, 'nvim.desktop': <{'position': <8>}>, 'org.gnome.PowerStats.desktop': <{'position': <9>}>, 'gnome-control-center.desktop': <{'position': <10>}>, 'software-properties-gtk.desktop': <{'position': <11>}>, 'update-manager.desktop': <{'position': <12>}>, 'gnome-session-properties.desktop': <{'position': <13>}>, 'org.gnome.gedit.desktop': <{'position': <14>}>, 'snap-store_ubuntu-software.desktop': <{'position': <15>}>, 'Utilities': <{'position': <16>}>, 'debian-uxterm.desktop': <{'position': <17>}>, 'vim.desktop': <{'position': <18>}>, 'vlc.desktop': <{'position': <19>}>, 'debian-xterm.desktop': <{'position': <20>}>, 'org.pwmt.zathura.desktop': <{'position': <21>}>, 'code.desktop': <{'position': <22>}>, 'discord.desktop': <{'position': <23>}>}, {'google-chrome.desktop': <{'position': <0>}>}]
-command-history=['Bazecor']
+command-history=['Bazecor', 'vim test', 'vim']
 disable-user-extensions=false
 disabled-extensions=['ubuntu-dock@ubuntu.com', 'ubuntu-appindicators@ubuntu.com']
 enabled-extensions=['ding@rastersoft.com']
@@ -168,7 +171,7 @@ dock-position='LEFT'
 preferred-monitor=0
 
 [software]
-check-timestamp=int64 1625322819
+check-timestamp=int64 1625387709
 online-updates-timestamp=int64 1625327724
 
 [system/location]

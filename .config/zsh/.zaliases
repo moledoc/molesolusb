@@ -164,6 +164,7 @@ alias gb="git branch"
 alias gm="git merge"
 alias gr="git reset"
 
+alias glone="git clone"
 alias gorig="git remote show origin"
 alias gcof="git checkout --"
 alias grh="git reset --hard"
