@@ -164,13 +164,14 @@ notice "sudo configured"
 
 # set up Yaru
 notice "Add Yaru themes, icons and sounds to the system"
-unzip $HOME/Documents/molecurrent/.config/appearance.zip -d $HOME/Documents/molecurrent/.config/
-sudo cp -rv $HOME/Documents/molecurrent/.config/appearance/* /usr/share/
-# cp -rv $HOME/Documents/molecurrent/.config/appearance/sounds /usr/share/sounds
-# cp -rv $HOME/Documents/molecurrent/.config/appearance/icons /usr/share/icons
-# cp -rv $HOME/Documents/molecurrent/.config/appearance/themes /usr/share/themes
-rm -r $HOME/Documents/molecurrent/.config/appearance
+unzip $HOME/.config/appearance.zip -d $HOME/.config/
+sudo cp -rv $HOME/.config/appearance/* /usr/share/
+rm -r $HOME/.config/appearance
 notice "Yaru added"
+
+# Set up default wallpaper
+sudo cp -v $HOME/.config/wallpaper.jpg /usr/share/backgrounds
+
 
 notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
