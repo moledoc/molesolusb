@@ -99,6 +99,25 @@ nmap <M-`> g~iw
 " switch case of the first letter of the word under the cursor.
 nmap <M-~> lb~h
 
+" Make Y behave like other capitalized letters
+nnoremap Y y$
+" Keeping it center
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+" new undo breakpoints
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoreamp ! !<C-g>u
+inoremap ? ?<C-g>u
+inoremap <Space> <Space><C-g>u
+inoremap { {<C-g>u
+inoremap } }<C-g>u
+inoremap ( (<C-g>u
+inoremap ) )<C-g>u
+inoreamp [ [<C-g>u
+inoremap ] ]<C-g>u
+
 """""""
 " notes 
 " Vim bindings for moving; All are prepended with <C-w>
@@ -120,6 +139,14 @@ inoremap <M-h> <C-\><C-N><C-w>h
 inoremap <M-j> <C-\><C-N><C-w>j
 inoremap <M-k> <C-\><C-N><C-w>k
 inoremap <M-l> <C-\><C-N><C-w>l
+" move text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoreamp <C-j> <esc>:m .+1<CR>==
+inoremap <C-k> <esc>:m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
 
 " Make new split to the given direction.
 nnoremap <M-S-h> :vertical leftabove new<CR>
