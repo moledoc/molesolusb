@@ -185,7 +185,6 @@ sudo cp -v $HOME/.config/wallpaper.jpg /usr/share/backgrounds
 
 notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
-notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
 notice "Opening firefox for chrome, vscode, discord install;
 github to add ssh key;
@@ -195,17 +194,27 @@ appimage launcher for integrated appimage launching
 firefox "chrome.com"
 firefox "https://code.visualstudio.com/"
 firefox "https://discord.com/"
+
+notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 firefox "github.com/login"
-firefox "https://dygma.com/pages/bazecor"
+
+notice "Select wanted install .deb"
 firefox "https://github.com/TheAssassin/AppImageLauncher/releases"
+
+notice "Install bazecor .appimage and open it with AppImageLauncher later"
+firefox "https://dygma.com/pages/bazecor"
 
 # install the .deb files we just downloaded
 echo "Press enter, when all wanted .deb files are downloaded to $HOME/Downloads/ directory." 
-read firefoxInstallDone
-
 for filename in $HOME/Downloads/*.deb
 do
   ${elevate} dpkg -i ${filename}
 done
+
+# install digidoc
+notice "Downloading and installing digidoc"
+curl https://installer.id.ee/media/install-scripts/install-open-eid.sh > "$HOME"/Downloads/install-open-eid.sh
+chmod +x "$HOME"/Downloads/install-open-eid.sh
+sh "$HOME"/Downloads/install-open-eid.sh
 
 cowsay -f bud-frogs "SETUP DONE!"
