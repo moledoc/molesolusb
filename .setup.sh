@@ -45,7 +45,7 @@ user=$(who)
 user=${user%% *}
 
 # Download packages (set for ubuntu atm).
-packages="xterm zsh zsh-syntax-highlighting neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool zip unzip vlc" # guake doas exa
+packages="xterm zsh zsh-syntax-highlighting neovim vim firefox fzf wget curl keepassxc htop fd-find ripgrep zathura-pdf-poppler xclip dconf-cli gnome-tweak-tool zip unzip vlc doas exa" # guake
 additionalPkgs="gnome-boxes transmission redshift tmux eog gnome-mpv texlive pandoc" # libxtst-devel libpng-devel
 forFun="cowsay"
 
@@ -217,4 +217,9 @@ curl https://installer.id.ee/media/install-scripts/install-open-eid.sh > "$HOME"
 chmod +x "$HOME"/Downloads/install-open-eid.sh
 sh "$HOME"/Downloads/install-open-eid.sh
 
-cowsay -f bud-frogs "SETUP DONE!"
+cowsay -f bud-frogs "SETUP DONE!
+Logging out in 5sec"
+
+# Log user out
+sleep 5
+gnome-session-quit --force
