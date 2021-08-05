@@ -155,10 +155,20 @@ echo "permit nopass ${user}" | sudo tee /usr/local/etc/doas.conf
 echo "permit nopass ${user}" | sudo tee /etc/doas.conf
 notice "doas configured"
 notice "Update sudo config"
+# make backup of the original file
 sudo cat /etc/sudoers | sudo tee /etc/sudoers.bu
-echo "%wheel ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.tmp
-sudo cat /etc/sudoers /etc/sudoers.tmp | sudo tee /etc/sudoers.tmp2
-sudo cat /etc/sudoers.tmp2 | sudo tee /etc/sudoers
+# make working copy for sudoers file
+sudo cat /etc/sudoers | sudo tee /etc/sudoers.copy
+# remove %sudo line from the sudoers file, when it exists
+sudo sed '/\%sudo/d;' /etc/sudoers | sudo tee /etc/sudoers.copy
+# make temp file containing no pass lines 
+echo "# COMMENT: nopass added by moledoc setup script
+%wheel ALL=(ALL) NOPASSWD: ALL
+%sudo ALL=(ALL) NOPASSWD: ALL" > /tmp/sudoNoPass
+# compose sudoers file with nopass option for wheel and sudo
+sudo cat /etc/sudoers.copy /tmp/sudoNoPass | sudo tee /etc/sudoers
+# clean /tmp dir
+rm /tmp/sudoNoPass
 # sudo rm -fv /etc/sudoers.tmp
 notice "sudo configured"
 
@@ -177,12 +187,25 @@ notice "Copy github_key.pub to clipboard"
 xclip -selection clipboard < $HOME/.ssh/github_key.pub
 notice "GitHub ssh key is in the clipboard, you have to manually add it to github, to set up ssh for git"
 
-cowsay -f bud-frogs "SETUP DONE!"
-
-notice "Opening firefox for chrome, vscode, discord install; github to add ssh key; bazecor for DygmaRaise software; appimage launcher for integrated appimage launching"
+notice "Opening firefox for chrome, vscode, discord install;
+github to add ssh key;
+bazecor for DygmaRaise software;
+appimage launcher for integrated appimage launching
+(install .deb files, so those can be installed automatically afterwards)"
 firefox "chrome.com"
 firefox "https://code.visualstudio.com/"
 firefox "https://discord.com/"
 firefox "github.com/login"
 firefox "https://dygma.com/pages/bazecor"
 firefox "https://github.com/TheAssassin/AppImageLauncher/releases"
+
+# install the .deb files we just downloaded
+echo "Press enter, when all wanted .deb files are downloaded to $HOME/Downloads/ directory." 
+read firefoxInstallDone
+
+for filename in $HOME/Downloads/*.deb
+do
+  ${elevate} dpkg -i ${filename}
+done
+
+cowsay -f bud-frogs "SETUP DONE!"
