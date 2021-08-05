@@ -164,23 +164,23 @@ nnoremap Y y$
 " Keeping it center
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoreamp J mzJ`z
+nnoremap J mzJ`z
 " add new undo breakpoints
 inoremap , ,<C-g>u
 inoremap . .<C-g>u
-inoreamp ! !<C-g>u
+inoremap ! !<C-g>u
 inoremap ? ?<C-g>u
 inoremap <Space> <Space><C-g>u
 inoremap { {<C-g>u
 inoremap } }<C-g>u
 inoremap ( (<C-g>u
 inoremap ) )<C-g>u
-inoreamp [ [<C-g>u
+inoremap [ [<C-g>u
 inoremap ] ]<C-g>u
 " move text
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoreamp <C-j> <esc>:m .+1<CR>==
+inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==

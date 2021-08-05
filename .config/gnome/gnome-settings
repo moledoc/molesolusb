@@ -76,11 +76,14 @@ show-battery-percentage=true
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['gnome-control-center', 'guake', 'google-chrome', 'snap-store-ubuntu-software', 'org-gnome-nautilus', 'appimagelaunchersettings', 'org-keepassxc-keepassxc', 'org-gnome-evolution-alarm-notify', 'gnome-network-panel', 'gnome-power-panel']
+application-children=['gnome-control-center', 'guake', 'google-chrome', 'snap-store-ubuntu-software', 'org-gnome-nautilus', 'appimagelaunchersettings', 'org-keepassxc-keepassxc', 'org-gnome-evolution-alarm-notify', 'gnome-network-panel', 'gnome-power-panel', 'firefox']
 show-in-lock-screen=false
 
 [desktop/notifications/application/appimagelaunchersettings]
 application-id='appimagelaunchersettings.desktop'
+
+[desktop/notifications/application/firefox]
+application-id='firefox.desktop'
 
 [desktop/notifications/application/gnome-control-center]
 application-id='gnome-control-center.desktop'
@@ -109,6 +112,9 @@ application-id='org.keepassxc.KeePassXC.desktop'
 [desktop/notifications/application/snap-store-ubuntu-software]
 application-id='snap-store_ubuntu-software.desktop'
 
+[desktop/notifications/application/update-manager]
+application-id='update-manager.desktop'
+
 [desktop/peripherals/touchpad]
 natural-scroll=true
 two-finger-scrolling-enabled=true
@@ -127,6 +133,9 @@ secondary-color='#000000000000'
 
 [desktop/session]
 idle-delay=uint32 300
+
+[desktop/sound]
+allow-volume-above-100-percent=false
 
 [desktop/wm/keybindings]
 switch-input-source=['<Alt>Shift_L']
@@ -193,7 +202,7 @@ search-view='list-view'
 
 [nautilus/window-state]
 initial-size=(890, 550)
-maximized=false
+maximized=true
 
 [settings-daemon/plugins/color]
 night-light-enabled=true
