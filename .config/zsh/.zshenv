@@ -9,7 +9,7 @@ export BROWSER="firefox"
 export HISTCONTROL=ignoreboth
 
 # export GIT_SSH='ssh -i $HOME/.ssh/github_key'
-export elevate="sudo" # doas --
+export elevate="doas --" # sudo
 
 ### Set some defaults for opening programs.
 ### Defined for usage in scripts.
