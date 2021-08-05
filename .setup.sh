@@ -208,7 +208,7 @@ firefox "https://dygma.com/pages/bazecor"
 echo "Press enter, when all wanted .deb files are downloaded to $HOME/Downloads/ directory." 
 for filename in $HOME/Downloads/*.deb
 do
-  ${elevate} dpkg -i ${filename}
+  sudo dpkg -i ${filename}
 done
 
 # install digidoc
