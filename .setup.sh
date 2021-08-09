@@ -206,6 +206,7 @@ firefox "https://dygma.com/pages/bazecor"
 
 # install the .deb files we just downloaded
 echo "Press enter, when all wanted .deb files are downloaded to $HOME/Downloads/ directory." 
+read null
 for filename in $HOME/Downloads/*.deb
 do
   sudo dpkg -i ${filename}
