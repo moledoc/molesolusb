@@ -18,6 +18,12 @@ target-units='radian'
 window-position=(26, 23)
 word-size=64
 
+[calendar]
+active-view='month'
+window-maximized=false
+window-position=(26, 23)
+window-size=(833, 600)
+
 [cheese]
 burst-delay=1000
 camera='A4 TECH USB2.0 PC Camera J  A4'
@@ -76,8 +82,11 @@ show-battery-percentage=true
 toolkit-accessibility=false
 
 [desktop/notifications]
-application-children=['gnome-control-center', 'guake', 'google-chrome', 'snap-store-ubuntu-software', 'org-gnome-nautilus', 'appimagelaunchersettings', 'org-keepassxc-keepassxc', 'org-gnome-evolution-alarm-notify', 'gnome-network-panel', 'gnome-power-panel', 'firefox']
+application-children=['gnome-control-center', 'guake', 'google-chrome', 'snap-store-ubuntu-software', 'org-gnome-nautilus', 'appimagelaunchersettings', 'org-keepassxc-keepassxc', 'org-gnome-evolution-alarm-notify', 'gnome-network-panel', 'gnome-power-panel', 'firefox', 'qdigidoc4', 'appimagelauncher', 'org-gnome-calendar']
 show-in-lock-screen=false
+
+[desktop/notifications/application/appimagelauncher]
+application-id='appimagelauncher.desktop'
 
 [desktop/notifications/application/appimagelaunchersettings]
 application-id='appimagelaunchersettings.desktop'
@@ -100,6 +109,9 @@ application-id='google-chrome.desktop'
 [desktop/notifications/application/guake]
 application-id='guake.desktop'
 
+[desktop/notifications/application/org-gnome-calendar]
+application-id='org.gnome.Calendar.desktop'
+
 [desktop/notifications/application/org-gnome-evolution-alarm-notify]
 application-id='org.gnome.Evolution-alarm-notify.desktop'
 
@@ -108,6 +120,9 @@ application-id='org.gnome.Nautilus.desktop'
 
 [desktop/notifications/application/org-keepassxc-keepassxc]
 application-id='org.keepassxc.KeePassXC.desktop'
+
+[desktop/notifications/application/qdigidoc4]
+application-id='qdigidoc4.desktop'
 
 [desktop/notifications/application/snap-store-ubuntu-software]
 application-id='snap-store_ubuntu-software.desktop'
@@ -235,8 +250,8 @@ dock-position='LEFT'
 preferred-monitor=0
 
 [software]
-check-timestamp=int64 1626971149
-online-updates-timestamp=int64 1625859270
+check-timestamp=int64 1628698639
+online-updates-timestamp=int64 1628698643
 
 [system/location]
 enabled=false

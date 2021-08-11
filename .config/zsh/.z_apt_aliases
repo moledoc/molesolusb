@@ -11,6 +11,8 @@ alias update="${elevate} apt update;${elevate} apt upgrade"
 alias install="${elevate} apt install"
 ## Install a .deb package
 alias debinstall="${elevate} dpkg -i"
+## dry-run install
+alias dryinstall="${elevate} apt install --dry-run"
 
 ## Uninstall a program
 alias uninstall="${elevate} apt remove"
