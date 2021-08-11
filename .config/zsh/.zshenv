@@ -1,6 +1,6 @@
 
 # Export variables
-export PATH=$PATH:/usr/local/bin:$HOME/.scripts:$HOME/.AppImages
+export PATH=$PATH:/usr/local/bin:$HOME/.scripts:$HOME/.AppImages:$HOME/go/bin
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=nvim
 export TERMINAL=gnome-terminal
