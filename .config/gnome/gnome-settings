@@ -78,6 +78,7 @@ enable-hot-corners=false
 gtk-im-module='gtk-im-context-simple'
 gtk-theme='Yaru-light'
 icon-theme='Yaru'
+locate-pointer=false
 show-battery-percentage=true
 toolkit-accessibility=false
 
@@ -131,6 +132,7 @@ application-id='snap-store_ubuntu-software.desktop'
 application-id='update-manager.desktop'
 
 [desktop/peripherals/touchpad]
+click-method='areas'
 natural-scroll=true
 two-finger-scrolling-enabled=true
 
@@ -153,6 +155,7 @@ idle-delay=uint32 300
 allow-volume-above-100-percent=false
 
 [desktop/wm/keybindings]
+begin-resize=@as []
 switch-input-source=['<Alt>Shift_L']
 switch-to-workspace-down=['<Primary><Super>Right']
 switch-to-workspace-up=['<Primary><Super>Left']
@@ -250,7 +253,7 @@ dock-position='LEFT'
 preferred-monitor=0
 
 [software]
-check-timestamp=int64 1628698639
+check-timestamp=int64 1629026449
 online-updates-timestamp=int64 1628698643
 
 [system/location]

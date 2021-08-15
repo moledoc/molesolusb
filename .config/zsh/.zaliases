@@ -181,9 +181,9 @@ alias gob="go build"
 # rm all downloaded extra modules
 alias gocmod="go clean -modcache"
 # add install dir to PATH
-alias goPath="export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))"
+# alias goPath="export PATH=$PATH:$(dirname $(go list -f '{{.Target}}' .))"
 # alias go test
-alias got="go test"
+alias got="go test -v"
 
 ## Shortcut for weather (can specify the city, default is defined by locale)
 alias weather="curl wttr.in"
