@@ -111,10 +111,10 @@ This subsection describes authors preferences in programs:
 * **version control**: git
 * **IDE(-like)/editor for development**: RStudio(/VScode), but also Intellij etc for corresponding language
 * **ecosystem**: **TODO**: testing google ecosystem, so I might change from firefox to google
-* **browser**: firefox
+* **browser**: ~~firefox~~ chrome
 	
 	* vim bindings pluggin
-	* duckduckgo pluggin
+	* *depr*/*optional* duckduckgo pluggin
 	* addblock (eg ublock) pluggin
 	* privacybadger plugin
 	* change privacy settings

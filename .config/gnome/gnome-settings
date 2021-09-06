@@ -33,7 +33,7 @@ video-x-resolution=640
 video-y-resolution=480
 
 [control-center]
-last-panel='keyboard'
+last-panel='wifi'
 
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
@@ -173,12 +173,28 @@ migrated=true
 network-monitor-gio-name=''
 
 [evolution-data-server/calendar]
-notify-window-height=157
-notify-window-paned-position=48
+notify-window-height=160
+notify-window-paned-position=49
 notify-window-width=531
 notify-window-x=26
 notify-window-y=23
 reminders-past=@as []
+
+[file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
+
+[file-roller/listing]
+list-mode='as-folder'
+name-column-width=250
+show-path=false
+sort-method='name'
+sort-type='ascending'
+
+[file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
 
 [gedit/plugins]
 active-plugins=['modelines', 'sort', 'spell', 'docinfo', 'filebrowser']
@@ -220,7 +236,7 @@ search-view='list-view'
 
 [nautilus/window-state]
 initial-size=(890, 550)
-maximized=true
+maximized=false
 
 [settings-daemon/plugins/color]
 night-light-enabled=true
@@ -253,7 +269,7 @@ dock-position='LEFT'
 preferred-monitor=0
 
 [software]
-check-timestamp=int64 1629026449
+check-timestamp=int64 1629737374
 online-updates-timestamp=int64 1628698643
 
 [system/location]
